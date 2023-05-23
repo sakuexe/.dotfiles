@@ -5,17 +5,19 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# if nvm is installed globally
+# https://mimiz.github.io/2017/04/02/Debian-Install-NodeJS-globally-with-NVM.html
+export NVM_DIR=/usr/local/nvm
+source /opt/nvm/nvm.sh
+# if nvm is not installed globally
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # ENVIRONMENT VARIABLES
-# Path to your oh-my-zsh installation.
-# export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
-# export XDG_CONFIG_HOME="$HOME/.config"
-# export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
-# export TERM=xterm-256color
-# if using mac
-# export TERM=screen-256color
+# are in ./zshenv
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

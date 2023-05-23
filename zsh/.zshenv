@@ -8,3 +8,5 @@ XDG_CONFIG_HOME="$HOME/.config"
 BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
 # for colors to work properly with TMUX
 TERM=xterm-256color
+# if using mac
+# export TERM=screen-256color

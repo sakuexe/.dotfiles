@@ -10,3 +10,5 @@
 
 # remove unneeded zsh files
 zsh/.zcom*
+# remove unneeded tmux folders/files
+tmux/plugins/
