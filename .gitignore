@@ -1,0 +1,12 @@
+# reverse logic .gitignore file
+# remove everything
+/*
+# add content
+!.gitignore
+!README.md
+!nvim/
+!tmux/
+!zsh/
+
+# remove unneeded zsh files
+zsh/.zcom*
