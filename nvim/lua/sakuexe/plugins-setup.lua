@@ -60,6 +60,7 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 
 	-- Icons
+	-- As of 24.5.2023, these create graphical bugs
 	use("nvim-tree/nvim-web-devicons")
 
 	-- Git plugins
