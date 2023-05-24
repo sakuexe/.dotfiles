@@ -71,6 +71,7 @@ Download the latest [tarball](https://github.com/git-ecosystem/git-credential-ma
 ```bash
 tar -xvf <path-to-tarball> -C /usr/local/bin
 git-credential-manager configure
+git config --global credential.credentialStore cache
 # will remember your credentials after next login
 ```
 
