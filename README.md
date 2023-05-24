@@ -6,18 +6,21 @@ always appreciated! :)
 
 ## Install Guides
 
-I am using a ```.config/``` folder for my dotfiles, so the instructions will
+I am using a `.config/` folder for my dotfiles, so the instructions will
 be tailored towards that style. If you do not wish that, you can freely modify
 the commands to suit your style.
 
-### ```.config/``` folder
+### `.config/` folder
 
-if you do not already have a ```.config/``` folder
+if you do not already have a `.config/` folder
+
 ```bash
 git clone https://github.com/sakuexe/.dotfiles ~/
 mv ~/.dotfiles ~/.config
 ```
-if you DO have a ```.config/``` folder
+
+if you DO have a `.config/` folder
+
 ```bash
 git clone https://github.com/sakuexe/.dotfiles ~/
 mv ~/.dotfiles/* ~/.config/
@@ -37,13 +40,13 @@ mv ~/.dotfiles/* ~/.config/
 
 ## TODOs / Bugs
 
-- When using Neovim inside of tmux, it likes to give random rendering errors sometimes.
+- Nerdfont V3
 
-For example, when using WSL2 on the Windows Terminal, some of the text can show up multiplied.
-This will fix itself after running Any command in the Tmux command line. Running a second window
-alongside Neovim (vertical split), will lessen these errors, but not completely get rid of them.
+Due to the newest update to the nerdfonts, some icons do not work. I have modified
+the lualine settings to use as little of those icons as possible. Note that
+this might (and hopefully soon) be fixed eventually.
 
-If you find any ways to fix this, it would be greatly appreciated. Thank you.
+If you find any new info on this problem, all help would be greatly appreciated!
 
 ## Miscellaneous
 
