@@ -63,3 +63,20 @@ live-server some-directory/
 # or a singular file
 live-server some-file.html
 ```
+
+- [git-credential-manager](https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md#tarball)
+
+Download the latest [tarball](https://github.com/git-ecosystem/git-credential-manager/releases/latest)
+
+```bash
+tar -xvf <path-to-tarball> -C /usr/local/bin
+git-credential-manager configure
+# will remember your credentials after next login
+```
+
+Uninstalling git-credential-manager
+
+```bash
+git-credential-manager unconfigure
+rm $(command -v git-credential-manager)
+```
