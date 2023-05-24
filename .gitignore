@@ -4,6 +4,7 @@
 # add content
 !.gitignore
 !README.md
+!terminalthemes.txt
 !nvim/
 !tmux/
 !zsh/
