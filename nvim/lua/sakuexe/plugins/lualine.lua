@@ -16,7 +16,7 @@ local lualine_palenight = require("lualine.themes.palenight")
 -- stylua: ignore
 local colors = {
   bg       = '#202328',
-  fg       = '#bbc2cf',
+  fg       = '#d1c8de',
   fg_dark  = '#8d8796',
   yellow   = '#ECBE7B',
   cyan     = '#008080',
@@ -84,7 +84,7 @@ local config = {
 			{
 				"buffers",
 				buffers_color = {
-					active = { bg = colors.transparent, fg = colors.magenta },
+					active = { bg = colors.transparent, fg = colors.fg },
 					inactive = { bg = colors.transparent, fg = colors.fg_dark },
 				},
 			},
@@ -97,7 +97,7 @@ local config = {
 	},
 }
 
--- Inserts a component in lualine_c at left section
+-- -- Inserts a component in lualine_c at left section
 local function ins_left(component)
 	table.insert(config.sections.lualine_c, component)
 end
@@ -110,6 +110,7 @@ end
 ins_left({
 	function()
 		return "▊"
+		-- return "|"
 	end,
 	color = { fg = colors.violet }, -- Sets highlighting of component
 	padding = { left = 0, right = 1 }, -- We don't need space before this
@@ -118,7 +119,8 @@ ins_left({
 ins_left({
 	-- mode component
 	function()
-		return ""
+		-- return ""
+		return "•"
 	end,
 	color = function()
 		-- auto change color according to neovims mode
@@ -161,7 +163,7 @@ ins_left({ "progress", color = { fg = colors.fg, gui = "bold" } })
 ins_left({
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
-	symbols = { error = " ", warn = " ", info = " " },
+	symbols = { error = " ", warn = " ", info = " ", hint = " " },
 	diagnostics_color = {
 		color_error = { fg = colors.red },
 		color_warn = { fg = colors.yellow },
@@ -169,34 +171,34 @@ ins_left({
 	},
 })
 
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
-ins_left({
-	function()
-		return "%="
-	end,
-})
+-- -- Insert mid section. You can make any number of sections in neovim :)
+-- -- for lualine it's any number greater then 2
+-- ins_left({
+-- 	function()
+-- 		return "%="
+-- 	end,
+-- })
 
-ins_left({
-	-- Lsp server name .
-	function()
-		local msg = "No Active Lsp"
-		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-		local clients = vim.lsp.get_active_clients()
-		if next(clients) == nil then
-			return msg
-		end
-		for _, client in ipairs(clients) do
-			local filetypes = client.config.filetypes
-			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-				return client.name
-			end
-		end
-		return msg
-	end,
-	icon = " LSP:",
-	color = { fg = colors.fg },
-})
+-- ins_left({
+-- 	-- Lsp server name .
+-- 	function()
+-- 		local msg = "No Active Lsp"
+-- 		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+-- 		local clients = vim.lsp.get_active_clients()
+-- 		if next(clients) == nil then
+-- 			return msg
+-- 		end
+-- 		for _, client in ipairs(clients) do
+-- 			local filetypes = client.config.filetypes
+-- 			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+-- 				return client.name
+-- 			end
+-- 		end
+-- 		return msg
+-- 	end,
+-- 	icon = " LSP:",
+-- 	color = { fg = colors.fg },
+-- })
 
 -- Add components to right sections
 ins_right({
@@ -209,20 +211,21 @@ ins_right({
 ins_right({
 	"fileformat",
 	fmt = string.upper,
-	icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+	icons_enabled = false, -- no icons for this
 	color = { fg = colors.green, gui = "bold" },
 })
 
 ins_right({
 	"branch",
-	icon = "",
+	-- icon = "",
 	color = { fg = colors.violet, gui = "bold" },
 })
 
 ins_right({
 	"diff",
 	-- Is it me or the symbol for modified us really weird
-	symbols = { added = " ", modified = "󰝤 ", removed = " " },
+	-- symbols = { added = " ", modified = "󰝤 ", removed = " " },
+	symbols = { added = " ", modified = " ", removed = " " },
 	diff_color = {
 		added = { fg = colors.green },
 		modified = { fg = colors.orange },
@@ -231,13 +234,14 @@ ins_right({
 	cond = conditions.hide_in_width,
 })
 
-ins_right({
-	function()
-		return "▊"
-	end,
-	color = { fg = colors.violet },
-	padding = { left = 1 },
-})
+-- ins_right({
+-- 	function()
+-- 		-- return "▊"
+--     return "|"
+-- 	end,
+-- 	color = { fg = colors.violet },
+-- 	padding = { left = 1 },
+-- })
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)

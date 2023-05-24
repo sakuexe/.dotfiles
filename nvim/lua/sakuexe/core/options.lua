@@ -27,7 +27,8 @@ opt.smartcase = true
 opt.incsearch = true
 
 -- cursor line
-opt.cursorline = true
+opt.cursorline = false
+-- vim.opt.hi.cursorline = guibg=#1f142b
 
 -- appearance
 opt.termguicolors = true
@@ -39,7 +40,8 @@ opt.scrolloff = 8
 
 -- encoding and clipboard
 opt.encoding = "utf-8"
-opt.clipboard:append("unnamedplus")
+-- opt.clipboard:append("unnamedplus")
+-- Remember to install xclip!
 
 -- split windows
 opt.splitright = true
