@@ -19,7 +19,8 @@ Recommended Dependencies
 - gcc ( C-compiler for treesitter )
 - g++ ( Another C compiler for LSP )
 - make ( for native fzf to work )
-- python3.8-venv ( for autopep8/django linting/formatting to work )
+- python3.10-venv ( for autopep8/django linting/formatting to work )
+- xclip ( for clipboard between vm and host )
 
 ```bash
 sudo apt install git ripgrep gcc g++ make python3.8-venv
@@ -39,6 +40,16 @@ sudo ln -s /neovim/nvim.appimage /usr/bin/nvim
 nvim
 ```
 
+**1.2.) If your distro doesn't have FUSE**
+
+```bash
+./nvim.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim
+# OPTIONAL: Expose neovim globally
+sudo mv squashfs-root/ /neovim/
+sudo ln -s /neovim/squashfs-root/usr/bin/nvim /usr/bin/nvim
+```
+
 **2.) Make a directory for the config files, if not already in place**
 
 ```bash
@@ -46,7 +57,7 @@ mkdir ~/.config
 cd ~/config
 ```
 
-**2.1.) Clone this repository and rename it to "nvim"**
+**3.) Clone this repository and rename it to "nvim"**
 
 Inside of the .config directory
 
