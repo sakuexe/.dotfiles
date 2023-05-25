@@ -21,9 +21,12 @@ nnoremap("<Leader>nh", ":nohlsearch<CR>")
 nnoremap("<Leader><Tab>", ":bnext<CR>")
 nnoremap("<Leader><S-Tab>", ":bprev<CR>")
 
+-- Jump between windows with <leader> h and l
+nnoremap("<leader>h", ":bnext<CR>zz")
+nnoremap("<leader>l", ":bprev<CR>zz")
 -- Also be able to move between buffers with CTRL-l && CTRL-h
-nnoremap("<C-l>", ":bnext<CR>")
-nnoremap("<C-h>", ":bprev<CR>")
+-- nnoremap("<C-l>", ":bnext<CR>")
+-- nnoremap("<C-h>", ":bprev<CR>")
 
 -- Move lines that are selected with J and K
 vnoremap("J", ":m '>+1<CR>gv=gv")

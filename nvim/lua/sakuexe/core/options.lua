@@ -41,7 +41,6 @@ opt.scrolloff = 8
 -- encoding and clipboard
 opt.encoding = "utf-8"
 -- opt.clipboard:append("unnamedplus")
--- Remember to install xclip!
 
 -- split windows
 opt.splitright = true
