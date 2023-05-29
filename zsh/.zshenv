@@ -6,6 +6,6 @@ XDG_CONFIG_HOME="$HOME/.config"
 ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 # for browser integration to work (like with google "term")
 BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
-# get password-store passwords more securely
-# (they don't get left in the history this way)
-# GITHUB_TOKEN=$(pass show github/personal/tokens/admin)
+# to get rid of the annoying error of gpg-agent:
+# gpg: public key decryption failed: Inappropriate ioctl for device
+GPG_TTY=$(tty)
