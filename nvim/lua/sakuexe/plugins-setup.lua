@@ -116,6 +116,9 @@ return packer.startup(function(use)
 	-- django plus
 	use("tweekmonster/django-plus.vim")
 
+	-- color highlighting / preview
+	use("chrisbra/Colorizer")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

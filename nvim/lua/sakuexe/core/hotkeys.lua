@@ -22,8 +22,8 @@ nnoremap("<Leader><Tab>", ":bnext<CR>")
 nnoremap("<Leader><S-Tab>", ":bprev<CR>")
 
 -- Jump between windows with <leader> h and l
-nnoremap("<leader>h", ":bnext<CR>zz")
-nnoremap("<leader>l", ":bprev<CR>zz")
+nnoremap("<leader>l", ":bnext<CR>zz")
+nnoremap("<leader>h", ":bprev<CR>zz")
 -- Also be able to move between buffers with CTRL-l && CTRL-h
 -- nnoremap("<C-l>", ":bnext<CR>")
 -- nnoremap("<C-h>", ":bprev<CR>")
