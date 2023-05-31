@@ -24,7 +24,6 @@ nnoremap("<Leader><S-Tab>", ":bprev<CR>")
 -- Jump between windows with <leader> h and l
 nnoremap("<leader>l", ":bnext<CR>zz")
 nnoremap("<leader>h", ":bprev<CR>zz")
--- Also be able to move between buffers with CTRL-l && CTRL-h
 -- nnoremap("<C-l>", ":bnext<CR>")
 -- nnoremap("<C-h>", ":bprev<CR>")
 
@@ -100,6 +99,3 @@ nnoremap("<leader>u", ":UndotreeToggle<CR>")
 
 -- Git fugitive
 nnoremap("<leader>gs", ":Git<CR>")
-
--- ToggleTerminal
-tnoremap("<Esc>", "<C-\\><C-n>:q!<CR>") -- quit terminal

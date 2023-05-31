@@ -99,7 +99,7 @@ plugins=(
 ZSH_WEB_SEARCH_ENGINES=(
   reddit "https://www.reddit.com/search/?q="
   youtube "https://www.youtube.com/results?search_query="
-  wikipedia "https://en.wikipedia.org/wiki/"
+  wikipedia "https://en.wikipedia.org/w/index.php?search="
 )
 
 source $ZSH/oh-my-zsh.sh
