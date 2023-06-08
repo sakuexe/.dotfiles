@@ -38,7 +38,6 @@ return packer.startup(function(use)
 	use("Shatur/neovim-ayu")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("JoosepAlviste/palenightfall.nvim")
-	use("nickaroot/vim-xcode-dark-theme")
 	use("AhmedAbdulrahman/aylin.vim")
 	use("xiyaowong/nvim-transparent")
 
@@ -121,7 +120,7 @@ return packer.startup(function(use)
 	use("github/copilot.vim")
 
 	-- django plus
-	use("tweekmonster/django-plus.vim")
+	-- use("tweekmonster/django-plus.vim")
 
 	-- color highlighting / preview
 	use("chrisbra/Colorizer")

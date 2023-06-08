@@ -78,7 +78,7 @@ mv nvim.lua nvim
 
 ### Colorschemes I enjoy
 
-- [whatsthatsmell/codesmell_dark.vim](https://github.com/whatsthatsmell/codesmell_dark.vim)
+- [Shatur/neovim-ayu](https://github.com/Shatur/neovim-ayu)
 - [catppuccin/nvim](https://github.com/catppuccin/nvim)
 - [JoosepAlviste/palenightfall.nvim](https://github.com/JoosepAlviste/palenightfall.nvim) - Currently using
 - [xiyaowong/nvim-transparent](https://github.com/xiyaowong/nvim-transparent) - Enables transparency
@@ -93,7 +93,7 @@ mv nvim.lua nvim
 
 #### File explorer / Finders
 
-- [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
+- [nvim-neo-tree/neotree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy finder
 - [nvim-telescope/telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim) - Dependency for fzf performance
 
@@ -139,15 +139,16 @@ mv nvim.lua nvim
 #### Better syntax highlighting
 
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [chrisbra/Colorizer](https://github.com/chrisbra/Colorizer) - Color highlighting
 
 #### Git
 
 - [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Shows Git color-coded lines on the left side
 <!-- - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive) - Git tool for Nvim -->
 
-#### Integrated Terminal
+#### Tmux integration
 
-- [akinsho/toggleterm.nvim](https://github.com/lewis6991/gitsigns.nvim) - Better integrated terminal
+- [christoomey/vim-tmux-navigator](https://github.com/lewis6991/gitsigns.nvim) - Better integrated terminal
 
 #### Undo tree
 
