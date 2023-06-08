@@ -8,6 +8,20 @@ if not actions_setup then
 	return
 end
 
+local remap_setup, remap = pcall(require, "sakuexe.core.keymaphelp")
+if not remap_setup then
+	return
+end
+
+local nnoremap = remap.nnoremap
+
+-- hotkeys for opening telescope
+nnoremap("<leader>ff", ":Telescope find_files<CR>")
+nnoremap("<leader>fg", ":Telescope live_grep<CR>")
+nnoremap("<leader>fc", ":Telescope grep_string<CR>")
+nnoremap("<leader>fb", ":Telescope buffers<CR>")
+nnoremap("<leader>fh", ":Telescope help_tags<CR>")
+
 telescope.setup({
 	defaults = {
 		mappings = {

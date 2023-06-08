@@ -36,9 +36,10 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("Shatur/neovim-ayu")
-	use("phanviet/vim-monokai-pro")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("JoosepAlviste/palenightfall.nvim")
+	use("nickaroot/vim-xcode-dark-theme")
+	use("AhmedAbdulrahman/aylin.vim")
 	use("xiyaowong/nvim-transparent")
 
 	-- Essential nvim plugins
@@ -50,7 +51,17 @@ return packer.startup(function(use)
 	use("windwp/nvim-ts-autotag")
 
 	-- File explorer
-	use("nvim-tree/nvim-tree.lua")
+	-- remove the deprecated commands from v1.x
+	vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+	use({
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v2.x",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		},
+	})
 
 	-- Fuzzy finding with telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for fuzzy finder
@@ -58,10 +69,6 @@ return packer.startup(function(use)
 
 	-- Statusline
 	use("nvim-lualine/lualine.nvim")
-
-	-- Icons
-	-- As of 24.5.2023, these create graphical bugs
-	use("nvim-tree/nvim-web-devicons")
 
 	-- Git plugins
 	use("lewis6991/gitsigns.nvim")

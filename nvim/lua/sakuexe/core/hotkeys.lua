@@ -83,19 +83,10 @@ nnoremap("<leader>bd", ":bd<CR>")
 nnoremap("<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- <[ Plugin Keymaps ]> --
-
--- Nvim-tree
-nnoremap("<leader>e", ":NvimTreeToggle<CR>")
-
--- Telescope
-nnoremap("<leader>ff", ":Telescope find_files<CR>")
-nnoremap("<leader>fg", ":Telescope live_grep<CR>")
-nnoremap("<leader>fc", ":Telescope grep_string<CR>")
-nnoremap("<leader>fb", ":Telescope buffers<CR>")
-nnoremap("<leader>fh", ":Telescope help_tags<CR>")
+-- for plugins that do not require their own configs
 
 -- Undotree toggle
 nnoremap("<leader>u", ":UndotreeToggle<CR>")
 
 -- Git fugitive
-nnoremap("<leader>gs", ":Git<CR>")
+-- nnoremap("<leader>gs", ":Git<CR>")
