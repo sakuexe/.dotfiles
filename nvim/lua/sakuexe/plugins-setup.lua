@@ -39,6 +39,7 @@ return packer.startup(function(use)
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("JoosepAlviste/palenightfall.nvim")
 	use("AhmedAbdulrahman/aylin.vim")
+	use("navarasu/onedark.nvim")
 	use("xiyaowong/nvim-transparent")
 
 	-- Essential nvim plugins
