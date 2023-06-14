@@ -79,8 +79,9 @@ mv nvim.lua nvim
 ### Colorschemes I enjoy
 
 - [Shatur/neovim-ayu](https://github.com/Shatur/neovim-ayu)
-- [catppuccin/nvim](https://github.com/catppuccin/nvim)
-- [JoosepAlviste/palenightfall.nvim](https://github.com/JoosepAlviste/palenightfall.nvim) - Currently using
+- [JoosepAlviste/palenightfall.nvim](https://github.com/JoosepAlviste/palenightfall.nvim)
+- [AhmedAbdulrahman/aylin.vim](https://github.com/AhmedAbdulrahman/aylin.vim)
+- [navarasu/onedark.nvim](https://github.com/navarasu/onedark.nvim) - Currently using
 - [xiyaowong/nvim-transparent](https://github.com/xiyaowong/nvim-transparent) - Enables transparency
 
 #### Neovim essentials
@@ -154,7 +155,7 @@ mv nvim.lua nvim
 
 - [mbbill/undotree](https://github.com/mbbill/undotree) - Visualize undo history and switch between old undos
 
-### Greeter
+#### Greeter
 
 - [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim) - For when opening Neovim without files or folders selected
 
