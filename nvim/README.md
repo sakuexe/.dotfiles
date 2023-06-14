@@ -154,6 +154,10 @@ mv nvim.lua nvim
 
 - [mbbill/undotree](https://github.com/mbbill/undotree) - Visualize undo history and switch between old undos
 
+### Greeter
+
+- [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim) - For when opening Neovim without files or folders selected
+
 ## **Miscellaneous**
 
 #### Live Server - npm package for live-server esque functionality
