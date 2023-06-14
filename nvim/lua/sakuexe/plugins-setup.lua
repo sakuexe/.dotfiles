@@ -126,6 +126,9 @@ return packer.startup(function(use)
 	-- color highlighting / preview
 	use("chrisbra/Colorizer")
 
+	-- start screen greeter
+	use("goolord/alpha-nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
