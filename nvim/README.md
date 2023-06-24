@@ -19,7 +19,6 @@ Recommended Dependencies
 - gcc ( C-compiler for treesitter )
 - g++ ( Another C compiler for LSP )
 - make ( for native fzf to work )
-- python3.10-venv ( for autopep8/django linting/formatting to work )
 - xclip ( for clipboard between vm and host )
 
 ```bash
@@ -70,7 +69,7 @@ mv nvim.lua nvim
 
 #### Plugin manager
 
-- [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
+- [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ### Other plugins' dependency
 

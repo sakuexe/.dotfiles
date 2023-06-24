@@ -8,12 +8,12 @@
 -- \       / |  | |  ||  |\   \('  '-'(_.-'  |  `---. /  .'.  \  |  `---..-.|      |('  '-'(_.-'  |  | |  |
 --  `-----'  `--' `--'`--' '--'  `-----'     `------''--'   '--' `------'`-'`------'  `-----'     `--' `--'
 
+-- plugins setup
+require("sakuexe.plugins-setup")
 -- core/native settings
 require("sakuexe.core.options")
 require("sakuexe.core.hotkeys")
 require("sakuexe.core.appearance")
--- plugins setup
-require("sakuexe.plugins-setup")
 -- file navigation
 require("sakuexe.plugins.neotree")
 require("sakuexe.plugins.telescope")

@@ -9,6 +9,9 @@ if not remap_setup then
 	return
 end
 
+-- remove legacy commands as suggested by the readme
+vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+
 local nnoremap = remap.nnoremap
 
 nnoremap("<leader>e", ":Neotree toggle<CR>")
