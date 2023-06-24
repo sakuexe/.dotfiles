@@ -28,67 +28,35 @@ end
 local plugins = {
 	-- Lua functions that many plugins use
 	"nvim-lua/plenary.nvim",
-
 	-- Colorschemes
 	"Shatur/neovim-ayu",
-	-- use({ "catppuccin/nvim", as = "catppuccin" })
+	{ "catppuccin/nvim", as = "catppuccin" },
 	"JoosepAlviste/palenightfall.nvim",
 	"AhmedAbdulrahman/aylin.vim",
 	"navarasu/onedark.nvim",
 	"xiyaowong/nvim-transparent",
-
 	-- Essential nvim plugins
 	"tpope/vim-surround", -- ysw & csw,
 	"tpope/vim-commentary", -- gc,
-
 	-- auto closing
 	"windwp/nvim-autopairs",
 	"windwp/nvim-ts-autotag",
-
-	-- File explorer
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v2.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-		},
-	},
-
-	-- Fuzzy finding with telescope
-	{
-		-- dependency for fuzzy finder
-		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "make",
-	},
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.1",
-	},
-
 	-- Statusline
 	"nvim-lualine/lualine.nvim",
-
 	-- Git plugins
 	"lewis6991/gitsigns.nvim",
 	-- use("tpope/vim-fugitive")
-
 	-- Undo tree
 	"mbbill/undotree",
-
 	-- Automatic saving (like in VSCode)
 	"Pocco81/auto-save.nvim",
-
 	-- Autocompletion
 	"hrsh7th/nvim-cmp",
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-path",
-
 	-- Managing and installing LSP servers, linters and formatters
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-
 	--Configuring LSP servers
 	"neovim/nvim-lspconfig", -- easily configure language servers,
 	"hrsh7th/cmp-nvim-lsp", -- for autocompletion
@@ -99,16 +67,43 @@ local plugins = {
 	},
 	"jose-elias-alvarez/typescript.nvim", -- additional functionality for typescript server
 	"onsails/lspkind.nvim", -- vscode like icons for autocompletion,
-
 	-- Formatting and linting
 	"jose-elias-alvarez/null-ls.nvim",
 	"jayp0521/mason-null-ls.nvim",
-
 	-- Snippets
 	"L3MON4D3/LuaSnip",
 	"saadparwaiz1/cmp_luasnip",
 	"rafamadriz/friendly-snippets",
-
+	-- Tmux compability
+	"christoomey/vim-tmux-navigator",
+	-- github copilot
+	"github/copilot.vim",
+	-- django plus
+	-- use("tweekmonster/django-plus.vim")
+	-- color highlighting / preview
+	"chrisbra/Colorizer",
+	-- start screen greeter
+	"goolord/alpha-nvim",
+	-- File explorer
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v2.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		},
+	},
+	-- Fuzzy finding with telescope
+	{
+		-- dependency for fuzzy finder
+		"nvim-telescope/telescope-fzf-native.nvim",
+		build = "make",
+	},
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.1",
+	},
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -117,21 +112,6 @@ local plugins = {
 			ts_update()
 		end,
 	},
-
-	-- Tmux compability
-	"christoomey/vim-tmux-navigator",
-
-	-- github copilot
-	"github/copilot.vim",
-
-	-- django plus
-	-- use("tweekmonster/django-plus.vim")
-
-	-- color highlighting / preview
-	"chrisbra/Colorizer",
-
-	-- start screen greeter
-	"goolord/alpha-nvim",
 }
 
 local opts = {}
