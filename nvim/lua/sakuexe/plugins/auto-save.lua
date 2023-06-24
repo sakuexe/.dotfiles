@@ -11,3 +11,6 @@ autosave.setup({
 
 -- disable autosave with Space-as
 vim.api.nvim_set_keymap("n", "<leader>as", ":ASToggle<CR>", {})
+
+-- if enabled does not want to work, disable it on startup with the following
+vim.cmd("silent! ASToggle")

@@ -82,8 +82,6 @@ local plugins = {
 	-- use("tweekmonster/django-plus.vim")
 	-- color highlighting / preview
 	"chrisbra/Colorizer",
-	-- start screen greeter
-	"goolord/alpha-nvim",
 	-- File explorer
 	{
 		"nvim-neo-tree/neo-tree.nvim",
@@ -111,6 +109,13 @@ local plugins = {
 			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
 			ts_update()
 		end,
+	},
+	-- start screen/greeter
+	{
+		"goolord/alpha-nvim",
+		event = "VimEnter",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		lazy = true,
 	},
 }
 

@@ -17,10 +17,10 @@ local nnoremap = remap.nnoremap
 
 -- hotkeys for opening telescope
 nnoremap("<leader>ff", ":Telescope find_files<CR>")
+nnoremap("<leader>fh", ":Telescope find_files hidden=true<CR>")
 nnoremap("<leader>fg", ":Telescope live_grep<CR>")
 nnoremap("<leader>fc", ":Telescope grep_string<CR>")
 nnoremap("<leader>fb", ":Telescope buffers<CR>")
-nnoremap("<leader>fh", ":Telescope help_tags<CR>")
 
 telescope.setup({
 	defaults = {
