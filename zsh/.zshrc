@@ -160,6 +160,8 @@ alias update="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 # git scripts
 alias gitpub="$HOME/shell_scripts/git_publish.sh"
 alias gitinit="$HOME/shell_scripts/git_setup.sh"
+# lazygit
+alias lg="lazygit"
 
 # make a directory and jump to it
 mkcdir () {
