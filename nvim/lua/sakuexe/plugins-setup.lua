@@ -80,8 +80,11 @@ local plugins = {
 	"github/copilot.vim",
 	-- django plus
 	-- use("tweekmonster/django-plus.vim")
-	-- color highlighting / preview
-	"chrisbra/Colorizer",
+	-- hotkey helper - Definitely not like Emacs
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+	},
 	-- File explorer
 	{
 		"nvim-neo-tree/neo-tree.nvim",

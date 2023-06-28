@@ -17,9 +17,9 @@ nnoremap("<F5>", ":luafile %<CR>")
 -- Remove search highlighting with Space-nh
 nnoremap("<Leader>nh", ":nohlsearch<CR>")
 
--- Set space-tab to move between buffers
-nnoremap("<Leader><Tab>", ":bnext<CR>")
-nnoremap("<Leader><S-Tab>", ":bprev<CR>")
+-- Set tab to move between buffers
+nnoremap("<Tab>", ":bnext<CR>zz")
+nnoremap("<S-Tab>", ":bprev<CR>zz")
 
 -- Jump between windows with <leader> h and l
 nnoremap("<leader>l", ":bnext<CR>zz")
@@ -58,8 +58,8 @@ nnoremap("<leader>Y", '"+Y')
 vnoremap("<leader>y", '"+y')
 
 -- Increases/Decreases numbers incrementally
-nnoremap("<leader>+", "<C-a>")
-nnoremap("<leader>-", "<C-a>")
+nnoremap("+", "<C-a>")
+nnoremap("-", "<C-a>")
 
 -- Split window hotkeys
 nnoremap("<leader>sv", "<C-w>v") -- split vertically
@@ -83,10 +83,7 @@ nnoremap("<leader>bd", ":bd<CR>")
 nnoremap("<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- <[ Plugin Keymaps ]> --
--- for plugins that do not require their own configs
-
 -- Undotree toggle
 nnoremap("<leader>u", ":UndotreeToggle<CR>")
-
 -- Git fugitive
 -- nnoremap("<leader>gs", ":Git<CR>")
