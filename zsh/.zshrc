@@ -148,6 +148,7 @@ alias zshreload="source $XDG_CONFIG_HOME/zsh/.zshrc"
 # tmux
 alias tmuxconf="nvim $XDG_CONFIG_HOME/tmux/.tmux.conf"
 alias tmuxreload="tmux source-file $XDG_CONFIG_HOME/tmux/.tmux.conf"
+alias tm="tmux a || tmux"
 
 # nvim
 alias vi="nvim"
