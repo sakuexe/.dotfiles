@@ -8,11 +8,14 @@ COMMIT_MSG=$1
 DEFAULT_REMOTE=`git remote | head -n 1`
 DEFAULT_BRANCH=`git branch --show-current`
 
-# initial refresh and adding
-git rm -r --cached . > /dev/null 2>&1  # remove all files from being tracked
-# add all files that are not in the gitignore to be tracked
-# this is done so that the most recent .gitignore changes can be applied
-git add .
+# get the root path to current git project
+GIT_ROOT=$(git rev-parse --show-toplevel)
+
+# initial refresh and removing all cached files
+git --git-dir="$GIT_ROOT" rm -r --cached . > /dev/null 2>&1  # remove all files from being tracked
+
+# add all changes to the next commit
+git add -A
 
 # commit, take arguments, or ask for commit message
 if ! [ -z "$COMMIT_MSG" ]
