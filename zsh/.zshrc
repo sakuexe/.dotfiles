@@ -161,6 +161,7 @@ alias update="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 # git scripts
 alias gitpub="$XDG_CONFIG_HOME/zsh/scripts/git_publish.sh"
 alias gitinit="$XDG_CONFIG_HOME/zsh/scripts/git_setup.sh"
+alias gitcd="cd $(git rev-parse --show-toplevel)"
 # lazygit
 alias lg="lazygit"
 
