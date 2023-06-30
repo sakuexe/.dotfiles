@@ -161,13 +161,10 @@ alias update="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 # git scripts
 alias gitpub="$XDG_CONFIG_HOME/zsh/scripts/git_publish.sh"
 alias gitinit="$XDG_CONFIG_HOME/zsh/scripts/git_setup.sh"
-alias gitcd="cd $(git rev-parse --show-toplevel)"
+gitcd() { cd "$(git rev-parse --show-toplevel)" } # cd to the root project folder
 # lazygit
 alias lg="lazygit"
 
 # make a directory and jump to it
-mkcdir () {
-  mkdir -p "$1" &&
-    cd "$1"
-}
+mkcdir() { mkdir -p "$1" && cd "$1" }
 
