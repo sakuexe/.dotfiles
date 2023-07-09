@@ -2,8 +2,8 @@
 
 ## Install instructions
 
-The following instuctions expect that you have a ```.config/``` 
-folder for your dotfiles. You can modify the commands to suit your style.
+The following instuctions expect that you have a `~/.dotfiles/`
+folder for your dotfiles. You can also modify the commands to suit your style.
 
 1. Install zsh and oh-my-zsh
 
@@ -12,44 +12,10 @@ sudo apt install zsh -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-2. Move the files to the .config folder
+2. Run the setup script for the rest
 
 ```bash
-mkdir ~/.config/oh-my-zsh ~/.config/zsh
-mv ~/.oh-my-zsh/* ~/.config/oh-my-zsh/
-mv ~/.zshrc ~/.config/zsh/
-rmdir ~/.oh-my-zsh/
-```
-
-3. Make a symbolic link for the zsh environment variables
-
-```bash
-ln -s ~/.config/zsh/.zshenv ~/.zshenv
-```
-
-4. Reload zsh
-
-```bash
-source ~/.config/zsh/.zshrc
-# You will see couple of errors here, but don't worry
-```
-
-4. Download zsh plugins and the theme
-
-```bash
-# zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-# theme: PowerLevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-```
-
-5. Reload zsh again
-
-```bash
-source ~/.config/zsh/.zshrc
-# No errors this time :)
+~/.dotfiles/zsh/setup.zsh
 ```
 
 ## Plugins
@@ -71,4 +37,5 @@ source ~/.config/zsh/.zshrc
   (useful git snippets for the shell)
 
 #### Return to .dotfiles
+
 [Return here](../)
