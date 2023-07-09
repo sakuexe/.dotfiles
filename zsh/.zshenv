@@ -1,7 +1,7 @@
+# dotfiles folder
+XDG_CONFIG_HOME="$HOME/.dotfiles"
 # find the .zshrc file
-ZDOTDIR="$HOME/.config/zsh"
-# .config file
-XDG_CONFIG_HOME="$HOME/.config"
+ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 # Path to the oh-my-zsh installation.
 ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 # for browser integration to work (like with google "term")

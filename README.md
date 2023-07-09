@@ -6,24 +6,14 @@ always appreciated! :)
 
 ## Install Guides
 
-I am using a `.config/` folder for my dotfiles, so the instructions will
+I am using a `.dotfiles/` folder for my dotfiles, so the instructions will
 be tailored towards that style. If you do not wish that, you can freely modify
 the commands to suit your style.
 
-### `.config/` folder
-
-if you do not already have a `.config/` folder
+### cloning the `.dotfiles/` folder
 
 ```bash
 git clone https://github.com/sakuexe/.dotfiles ~/
-mv ~/.dotfiles ~/.config
-```
-
-if you DO have a `.config/` folder
-
-```bash
-git clone https://github.com/sakuexe/.dotfiles ~/
-mv ~/.dotfiles/* ~/.config/
 ```
 
 ### Neovim

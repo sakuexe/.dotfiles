@@ -140,7 +140,7 @@ export PATH=$PATH:"/mnt/c/Users/sakuk/AppData/Local/Programs/Microsoft VS Code/b
 
 # ALIASES
 # dotfiles folder
-alias cdconf="cd ~/.config/"
+alias cdconf="cd $XDG_CONFIG_HOME"
 # zsh
 alias zshconf="nvim $XDG_CONFIG_HOME/zsh/.zshrc"
 alias zshreload="source $XDG_CONFIG_HOME/zsh/.zshrc"
