@@ -8,7 +8,6 @@
 !nvim/
 !tmux/
 !zsh/
-!oh-my-zsh/
 
 # remove unneeded zsh files
 zsh/.zcom*
