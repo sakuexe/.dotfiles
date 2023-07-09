@@ -6,6 +6,10 @@ mkdir $XDG_CONFIG_HOME/oh-my-zsh
 mv ~/.oh-my-zsh/* $XDG_CONFIG_HOME/oh-my-zsh/
 rm -rf ~/.oh-my-zsh
 
+# oh-my-zsh installation makes a .zshrc file in the home dir
+# so let's remove that too
+rm ~/.zshrc
+
 # source the main zsh file
 source $ZDOTDIR/.zshrc
 
