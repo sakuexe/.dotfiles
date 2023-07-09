@@ -10,6 +10,9 @@
 !zsh/
 
 # remove unneeded zsh files
-zsh/.zcom*
+zsh/setup/.zcomp*
+zsh/plugins/
+zsh/themes/
+zsh/.zsh_history
 # remove unneeded tmux folders/files
 tmux/plugins/

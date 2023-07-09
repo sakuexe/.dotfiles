@@ -27,7 +27,7 @@ source /opt/nvm/nvm.sh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
+[[ ! -f $ZSH_CUSTOM/.p10k.zsh ]] || source $ZSH_CUSTOM/.p10k.zsh
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -142,8 +142,8 @@ export PATH=$PATH:"/mnt/c/Users/sakuk/AppData/Local/Programs/Microsoft VS Code/b
 # dotfiles folder
 alias cdconf="cd $XDG_CONFIG_HOME"
 # zsh
-alias zshconf="nvim $XDG_CONFIG_HOME/zsh/.zshrc"
-alias zshreload="source $XDG_CONFIG_HOME/zsh/.zshrc"
+alias zshconf="nvim $ZDOTDIR/.zshrc"
+alias zshreload="source $ZDOTDIR/.zshrc"
 
 # tmux
 alias tmuxconf="nvim $XDG_CONFIG_HOME/tmux/.tmux.conf"
