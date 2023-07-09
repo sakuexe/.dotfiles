@@ -1,14 +1,15 @@
-# make sure that the environment variables are working by sourcing them
-source $HOME/.dotfiles/zsh/setup/.zshenv
+XDG_CONFIG_HOME="~/.dotfiles/zsh/setup/.zshenv"
+ZDOTDIR="$XDG_CONFIG_HOME/zsh/setup"
+ZSH_CUSTOM="$ZSH_CONFIG_HOME/zsh"
 
 # add symlinks to home folder for setting up the shell on startup
-ln -s $ZDOTDIR/.zshrc $HOME/.zshrc
-ln -s $ZDOTDIR/.zshenv $HOME/.zshenv
+ln -s $ZDOTDIR/.zshrc ~/.zshrc
+ln -s $ZDOTDIR/.zshenv ~/.zshenv
 
 # clean up the home directory by moving the oh-my-zsh files to .dotfiles
 mkdir $XDG_CONFIG_HOME/oh-my-zsh
-mv $HOME/.oh-my-zsh/* $XDG_CONFIG_HOME/oh-my-zsh/
-rm -rf $HOME/.oh-my-zsh
+mv ~/.oh-my-zsh/* $XDG_CONFIG_HOME/oh-my-zsh/
+rm -rf ~/.oh-my-zsh
 
 # install plugins for zsh via oh-my-zsh
 # zsh-autosuggestions
