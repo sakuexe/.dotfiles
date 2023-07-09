@@ -4,6 +4,7 @@ XDG_CONFIG_HOME="$HOME/.dotfiles"
 ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 # Path to the oh-my-zsh installation.
 ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
+ZSH_CUSTOM="$XDG_CONFIG_HOME/oh-my-zsh/custom"
 # for browser integration to work (like with google "term")
 BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
 # to get rid of the annoying error of gpg-agent:
