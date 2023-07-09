@@ -2,8 +2,8 @@
 source $HOME/.dotfiles/zsh/setup/.zshenv
 
 # add symlinks to home folder for setting up the shell on startup
-ln -s $ZDOTDIR/.zshrc $HOME/zshrc
-ln -s $ZDOTDIR/.zshenv $HOME/zshenv
+ln -s $ZDOTDIR/.zshrc $HOME/.zshrc
+ln -s $ZDOTDIR/.zshenv $HOME/.zshenv
 
 # clean up the home directory by moving the oh-my-zsh files to .dotfiles
 mkdir $XDG_CONFIG_HOME/oh-my-zsh

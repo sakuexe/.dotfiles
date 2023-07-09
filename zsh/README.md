@@ -12,10 +12,10 @@ sudo apt install zsh -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-2. Run the setup script for the rest
+2. Source the environment variables
 
 ```bash
-~/.dotfiles/zsh/setup.zsh
+source $HOME/.dotfiles/zsh/setup/.zshenv
 ```
 
 ## Plugins
