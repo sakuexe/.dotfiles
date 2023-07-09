@@ -14,5 +14,7 @@ zsh/setup/.zcomp*
 zsh/plugins/
 zsh/themes/
 zsh/.zsh_history
+# don't track secrets
+zsh/__*
 # remove unneeded tmux folders/files
 tmux/plugins/
