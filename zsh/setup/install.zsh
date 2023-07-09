@@ -7,8 +7,8 @@ ln -s $ZDOTDIR/.zshenv $HOME/.zshenv
 
 # clean up the home directory by moving the oh-my-zsh files to .dotfiles
 mkdir $XDG_CONFIG_HOME/oh-my-zsh
-mv ~/.oh-my-zsh/* $XDG_CONFIG_HOME/oh-my-zsh/
-rm -rf ~/.oh-my-zsh
+mv $HOME/.oh-my-zsh/* $XDG_CONFIG_HOME/oh-my-zsh/
+rm -rf $HOME/.oh-my-zsh
 
 # install plugins for zsh via oh-my-zsh
 # zsh-autosuggestions

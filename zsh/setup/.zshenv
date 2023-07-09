@@ -1,13 +1,13 @@
 # dotfiles folder
-XDG_CONFIG_HOME="$HOME/.dotfiles"
+export XDG_CONFIG_HOME="$HOME/.dotfiles"
 # find the .zshrc file
-ZDOTDIR="$XDG_CONFIG_HOME/zsh/setup"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh/setup"
 # Path to the oh-my-zsh installation.
-ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
+export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 # path to the custom scripts to be run on startup
-ZSH_CUSTOM="$XDG_CONFIG_HOME/zsh"
+export ZSH_CUSTOM="$XDG_CONFIG_HOME/zsh"
 # for browser integration to work (like with google "term")
-BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
+export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
 # to get rid of the annoying error of gpg-agent:
 # gpg: public key decryption failed: Inappropriate ioctl for device
-GPG_TTY=$(tty)
+export GPG_TTY=$(tty)
