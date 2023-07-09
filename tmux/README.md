@@ -1,17 +1,5 @@
 # **Tmux Configuration**
 
-## Optional Dependecy
-
-I am using a .config folder for my dotfiles, so make sure that you have
-the following installed in your .bashrc/.zshenv if you'd like to as well.
-
-```bash
-# .config folder
-XDG_CONFIG_HOME="$HOME/.config"
-# find the folder for zsh configs
-ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-```
-
 ## Install instructions
 
 1. Install tmux
@@ -27,12 +15,23 @@ tmux -V # 3.3a (as of May 2023)
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 ```
 
-3. OPTIONAL: Create a symbolic from the .config to the home folder
+### Optional: using the `.dotfiles` folder
+
+I am using a `.dotfiles` folder for my config files, so make sure that you have
+the following installed in your .bashrc/.zshenv if you'd like to as well.
+
+Therefore, you will need to have the following environment variables set in
+your `.zshenv` file. alternatively if that does not work for you,
+you can also just add a symbolic link to the home folder, pointing to the
+.tmux.conf file in the `.dotfiles/tmux` folder.
 
 ```bash
-# do this if tmux cannot find your configuration file in .config/tmux/
-ln -s ~/.config/tmux/.tmux.conf ~/.tmux.conf
+# environment variable will look like the following
+XDG_CONFIG_HOME="$HOME/.config"
+# or the symlink alternative
+ln -s ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ```
 
 #### Return to .dotfiles
+
 [Return here](../)

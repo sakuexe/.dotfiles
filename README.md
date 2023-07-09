@@ -16,31 +16,40 @@ the commands to suit your style.
 git clone https://github.com/sakuexe/.dotfiles ~/.dotfiles
 ```
 
-### Neovim
-
-[Neovim Config Files](./nvim/README.md) - Editor of choice
-
 ### Zsh
 
-[Zsh dotfiles](./zsh/README.md) - Shell and file navigation
+[Zsh dotfiles](./zsh/) - Shell and file navigation (config this first)
+
+### Neovim
+
+[Neovim Config Files](./nvim/) - Editor of choice
 
 ### Tmux
 
-[Tmux dotfiles](./tmux/README.md) - Terminal multiplexing
+[Tmux dotfiles](./tmux/) - Terminal multiplexing
 
-## TODOs / Bugs
+## Some bugs
 
-- Nerdfont V3
+I try to remember updating this section with any bugs that I encounter.
+With hopefully solutions to them as well. That being said, I do appreciate
+any help with solving these issues, that I may not have found a solution to.
 
-Due to the newest update to the nerdfonts, some icons do not work. I have modified
-the lualine settings to use as little of those icons as possible. Note that
-this might (and hopefully soon) be fixed eventually.
+<details>
+    <summary>Nerdfont V3 Graphical Glitches</summary>
 
-If you find any new info on this problem, all help would be greatly appreciated!
+    On some instances of WSL2, the nerdfonts are not rendered properly. This creates
+    graphical glitches in the terminal. Microsoft has already fixed most of this issue,
+    but if you are still experiencing some, make sure you update your terminal to the
+    newest version. I use the Windows Terminal. The preview version is a good thing
+    to try in a situation where you are experiencing graphical glitches.
+
+</details>
 
 ## Miscellaneous
 
 Here's a list of some of the other stuff I enjoy having downloaded on my terminal as well.
+
+- [Nerdfont](https://www.nerdfonts.com/) - For icons and symbols
 
 - [live-server](https://www.chiarulli.me/Neovim/20-live-server/) - For automatically refreshing
   the browser on reload

@@ -25,7 +25,7 @@ Recommended Dependencies
 sudo apt install git ripgrep gcc g++ make python3.8-venv
 ```
 
-**1.) Install latest neovim appimage**
+1.) Install latest neovim appimage
 
 [Link to latest Neovim Release](https://github.com/neovim/neovim/releases/tag/stable)
 
@@ -39,7 +39,7 @@ sudo ln -s /neovim/nvim.appimage /usr/bin/nvim
 nvim
 ```
 
-**1.2.) If your distro doesn't have FUSE**
+1.2.) If your distro doesn't have FUSE
 
 ```bash
 ./nvim.appimage --appimage-extract
@@ -49,20 +49,13 @@ sudo mv squashfs-root/ /neovim/
 sudo ln -s /neovim/squashfs-root/usr/bin/nvim /usr/bin/nvim
 ```
 
-**2.) Make a directory for the config files, if not already in place**
+2.) Open Neovim and let it install the plugins
 
 ```bash
-mkdir ~/.config
-cd ~/config
-```
-
-**3.) Clone this repository and rename it to "nvim"**
-
-Inside of the .config directory
-
-```bash
-git clone https://github.com/sakuexe/nvim.lua.git
-mv nvim.lua nvim
+# You might need to repeat this step a few times
+# If problems arise, check the health of your neovim installation
+nvim --version
+nvim # :checkhealth
 ```
 
 ## **Plugins**
