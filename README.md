@@ -13,7 +13,7 @@ the commands to suit your style.
 ### cloning the `.dotfiles/` folder
 
 ```bash
-git clone https://github.com/sakuexe/.dotfiles ~/
+git clone https://github.com/sakuexe/.dotfiles ~/.dotfiles
 ```
 
 ### Neovim
