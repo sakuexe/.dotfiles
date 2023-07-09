@@ -1,6 +1,5 @@
-XDG_CONFIG_HOME="~/.dotfiles/zsh/setup/.zshenv"
-ZDOTDIR="$XDG_CONFIG_HOME/zsh/setup"
-ZSH_CUSTOM="$ZSH_CONFIG_HOME/zsh"
+XDG_CONFIG_HOME=~/.dotfiles
+ZDOTDIR=$XDG_CONFIG_HOME/zsh/setup
 
 # add symlinks to home folder for setting up the shell on startup
 ln -s $ZDOTDIR/.zshrc ~/.zshrc
@@ -20,4 +19,4 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # reload once again to finish the setup
-source $ZDOTDIR/.zshrc
+source ~/.zshrc
