@@ -8,6 +8,5 @@ export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 export ZSH_CUSTOM="$XDG_CONFIG_HOME/zsh"
 # for browser integration to work (like with google "term")
 export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
-# to get rid of the annoying error of gpg-agent:
-# gpg: public key decryption failed: Inappropriate ioctl for device
-export GPG_TTY=$(tty)
+# for WSL, remove the windows path from the PATH variable
+# export PATH=$(echo $PATH | sed -e 's/:\/mnt.*//g')

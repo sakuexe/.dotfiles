@@ -102,6 +102,10 @@ ZSH_WEB_SEARCH_ENGINES=(
   wikipedia "https://en.wikipedia.org/w/index.php?search="
 )
 
+if [ -z "$ZSH" ]; then
+  ZSH=~/.dotfiles/oh-my-zsh
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
