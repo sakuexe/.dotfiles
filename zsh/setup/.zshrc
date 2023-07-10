@@ -141,34 +141,3 @@ fi
 # appendWindowsPath = false
 # add needed windows paths back, like the code . command for vscode
 export PATH=$PATH:"/mnt/c/Users/sakuk/AppData/Local/Programs/Microsoft VS Code/bin/"
-
-# ALIASES
-# dotfiles folder
-alias cdconf="cd $XDG_CONFIG_HOME"
-# zsh
-alias zshconf="nvim $ZDOTDIR/.zshrc"
-alias zshreload="source $ZDOTDIR/.zshrc"
-
-# tmux
-alias tmuxconf="nvim $XDG_CONFIG_HOME/tmux/.tmux.conf"
-alias tmuxreload="tmux source-file $XDG_CONFIG_HOME/tmux/.tmux.conf"
-alias tm="tmux a || tmux"
-
-# nvim
-alias vi="nvim"
-alias viconf="cd $XDG_CONFIG_HOME/nvim/"
-alias initlua="nvim $XDG_CONFIG_HOME/nvim/init.lua"
-
-# Update/Upgrade into one alias
-alias update="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
-
-# git scripts
-alias gitpub="$XDG_CONFIG_HOME/zsh/scripts/git_publish.sh"
-alias gitinit="$XDG_CONFIG_HOME/zsh/scripts/git_setup.sh"
-gitcd() { cd "$(git rev-parse --show-toplevel)" } # cd to the root project folder
-# lazygit
-alias lg="lazygit"
-
-# make a directory and jump to it
-mkcdir() { mkdir -p "$1" && cd "$1" }
-
