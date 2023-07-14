@@ -10,7 +10,7 @@ alias cdconf="cd $XDG_CONFIG_HOME"
 # zsh
 alias zshrc="nvim $ZDOTDIR/.zshrc"
 alias zshenv="nvim $ZDOTDIR/.zshenv"
-alias zshconf="cd $ZDOTDIR"
+alias zshconf="cd $XDG_CONFIG_HOME/zsh/"
 alias zshreload="source $ZDOTDIR/.zshrc"
 
 # tmux
@@ -33,5 +33,9 @@ gitcd() { cd "$(git rev-parse --show-toplevel)" } # cd to the project's root fol
 # lazygit
 alias lg="lazygit"
 
+# other utility functions
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 # make a directory and jump to it
 mkcdir() { mkdir -p "$1" && cd "$1" }
