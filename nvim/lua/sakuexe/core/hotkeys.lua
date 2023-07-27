@@ -59,7 +59,7 @@ vnoremap("<leader>y", '"+y')
 
 -- Increases/Decreases numbers incrementally
 nnoremap("+", "<C-a>")
-nnoremap("-", "<C-a>")
+nnoremap("-", "<C-x>")
 
 -- Split window hotkeys
 nnoremap("<leader>sv", "<C-w>v") -- split vertically
