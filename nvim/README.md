@@ -114,7 +114,6 @@ nvim # :checkhealth
 - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Easier way to configure LSP servers
 - [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) - Smart autocompletion with LSP
 - [glepnir/lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim) - Enhanced UI
-- [jose-elias-alvarez/typescript.nvim](https://github.com/jose-elias-alvarez/typescript.nvim)
 - [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim) - VsCode like icons for autocompletion
 - [github/copilot.nvim](https://github.com/github/copilot.vim) - Github Copilot integration
 
