@@ -50,6 +50,7 @@ local plugins = {
 	"mbbill/undotree",
 	-- Automatic saving (like in VSCode)
 	"Pocco81/auto-save.nvim",
+
 	-- Autocompletion
 	"hrsh7th/nvim-cmp",
 	"hrsh7th/cmp-buffer",
@@ -65,7 +66,6 @@ local plugins = {
 		"glepnir/lspsaga.nvim",
 		branch = "main",
 	},
-	"jose-elias-alvarez/typescript.nvim", -- additional functionality for typescript server
 	"onsails/lspkind.nvim", -- vscode like icons for autocompletion,
 	-- Formatting and linting
 	"jose-elias-alvarez/null-ls.nvim",
@@ -74,12 +74,11 @@ local plugins = {
 	"L3MON4D3/LuaSnip",
 	"saadparwaiz1/cmp_luasnip",
 	"rafamadriz/friendly-snippets",
-	-- Tmux compability
-	"christoomey/vim-tmux-navigator",
 	-- github copilot
 	"github/copilot.vim",
-	-- django plus
-	-- use("tweekmonster/django-plus.vim")
+
+	-- Tmux compability
+	"christoomey/vim-tmux-navigator",
 	-- hotkey helper - Definitely not like Emacs
 	{
 		"folke/which-key.nvim",
@@ -105,14 +104,8 @@ local plugins = {
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
 	},
-	-- Treesitter
-	{
-		"nvim-treesitter/nvim-treesitter",
-		cmd = function()
-			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-			ts_update()
-		end,
-	},
+	-- -- Treesitter
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	-- start screen/greeter
 	{
 		"goolord/alpha-nvim",
@@ -120,6 +113,8 @@ local plugins = {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		lazy = true,
 	},
+	-- django plus
+	-- use("tweekmonster/django-plus.vim")
 }
 
 local opts = {}

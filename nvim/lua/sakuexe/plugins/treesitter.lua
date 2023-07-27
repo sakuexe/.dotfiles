@@ -12,19 +12,18 @@ treesitter.setup({
 	ensure_installed = {
 		-- Link to a list of available languages:
 		-- https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
-		"json",
 		"javascript",
 		"typescript",
 		"tsx",
 		"html",
 		"css",
+		"python",
 		"markdown",
 		"markdown_inline",
+		"json",
 		"bash",
 		"lua",
 		"vim",
-		"python",
-		"c_sharp",
 	},
 	auto_install = true,
 })
