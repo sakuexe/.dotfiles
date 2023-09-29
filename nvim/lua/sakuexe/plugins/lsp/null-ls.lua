@@ -13,9 +13,9 @@ null_ls.setup({
 		-- null_ls.builtins.completion.spell,
 	},
 	on_attach = function(client, bufnr)
-		-- if not client.supports_method("textDocument/formatting") then
-		-- 	return
-		-- end
+		if not client.supports_method("textDocument/formatting") then
+			return
+		end
 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			group = augroup,

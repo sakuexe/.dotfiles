@@ -14,6 +14,9 @@ inoremap("jk", "<Esc>")
 -- reload nvim with f5
 nnoremap("<F5>", ":luafile %<CR>")
 
+-- format buffer with lsp
+nnoremap("<C-f>", ":lua vim.lsp.buf.format()<CR>")
+
 -- Remove search highlighting with Space-nh
 nnoremap("<Leader>nh", ":nohlsearch<CR>")
 
@@ -81,6 +84,7 @@ nnoremap("<leader>bd", ":bd<CR>")
 -- Start replacing the current word you are hovering over Very very lovely.
 -- You can also use the lspsaga version with <leader>rn
 nnoremap("<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vnoremap("<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- <[ Plugin Keymaps ]> --
 -- Undotree toggle

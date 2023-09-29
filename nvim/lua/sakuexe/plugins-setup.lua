@@ -113,7 +113,6 @@ local plugins = {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		lazy = true,
 	},
-	"karb94/neoscroll.nvim",
 	-- django plus
 	-- use("tweekmonster/django-plus.vim")
 }
