@@ -140,4 +140,4 @@ fi
 # [interop]
 # appendWindowsPath = false
 # add needed windows paths back, like the code . command for vscode
-export PATH=$PATH:"/mnt/c/Users/sakuk/AppData/Local/Programs/Microsoft VS Code/bin/"
+# export PATH=$PATH:"/mnt/c/Users/sakuk/AppData/Local/Programs/Microsoft VS Code/bin/"
