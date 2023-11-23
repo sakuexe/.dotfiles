@@ -102,7 +102,7 @@ local plugins = {
 	},
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.1",
+		tag = "0.1.4",
 	},
 	-- -- Treesitter
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
