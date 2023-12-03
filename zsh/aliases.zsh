@@ -33,6 +33,8 @@ alias gitinit="$ZDOTDIR/scripts/git-setup.sh"
 gitcd() { cd "$(git rev-parse --show-toplevel)" } # cd to the project's root folder
 # lazygit
 alias lg="lazygit"
+# other git tricks
+alias gitref="git rm -rf --cached . > /dev/null && git add . && git status"
 
 # other utility functions
 
