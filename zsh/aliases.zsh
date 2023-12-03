@@ -1,7 +1,7 @@
 # ls
-alias ll="ls -lhpg"
-alias l="ls -p"
-# la shows all info
+alias la="ls -laFh --color=auto"  # show all
+alias ll="ls -lhpg --color=auto"  # long format, hide hidden
+alias l="ls -F --color=auto"      # list short form
 
 # navigate to dotfiles folder
 alias cdconf="cd $XDG_CONFIG_HOME"
