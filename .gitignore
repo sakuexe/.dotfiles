@@ -13,6 +13,7 @@
 zsh/.zsh_history
 zsh/.p10k.zsh
 zsh/.zcompdump
+zsh/.zcompcache
 # don't track secrets
 zsh/__*
 # remove unneeded tmux folders/files

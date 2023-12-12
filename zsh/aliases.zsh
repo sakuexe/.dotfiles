@@ -24,17 +24,17 @@ alias initlua="nvim $XDG_CONFIG_HOME/nvim/init.lua"
 # Update/Upgrade into one alias
 # Ubuntu
 # alias update="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
-# OpenSuse
-alias update="sudo zypper ref && sudo zypper dup"
+# OpenSuse Tumbleweed
+alias update="sudo zypper ref && sudo zypper dup -y"
 
-# git scripts
+# git
+gitcd() { cd "$(git rev-parse --show-toplevel)" } # cd to the project's root folder
+alias gitref="git rm -rf --cached . > /dev/null && git add . && git status"
+# scripts
 alias gitpub="$ZDOTDIR/scripts/git-publish.sh"
 alias gitinit="$ZDOTDIR/scripts/git-setup.sh"
-gitcd() { cd "$(git rev-parse --show-toplevel)" } # cd to the project's root folder
 # lazygit
 alias lg="lazygit"
-# other git tricks
-alias gitref="git rm -rf --cached . > /dev/null && git add . && git status"
 
 # other utility functions
 
