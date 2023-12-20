@@ -22,7 +22,10 @@ Recommended Dependencies
 - xclip ( for clipboard between vm and host )
 
 ```bash
-sudo apt install git ripgrep gcc g++ make python3.8-venv
+# Ubuntu
+sudo apt install git ripgrep gcc g++ make
+# Opensuse
+sudo zypper install git ripgrep gcc gcc-c++ make
 ```
 
 1.) Install latest neovim appimage
