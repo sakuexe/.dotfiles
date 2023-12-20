@@ -10,22 +10,22 @@ of just blindly copying it.
 
 REQUIRED DEPENDENCIES:
 
-- NodeJS ( [Nvm](https://github.com/nvm-sh/nvm#install--update-script) recommended )
+- NodeJS ([Nvm](https://github.com/nvm-sh/nvm#install--update-script) recommended)
 - Git
 
 Recommended Dependencies
 
-- RipGrep ( Telescope FuzzyFinder)
-- gcc ( C-compiler for treesitter )
-- g++ ( Another C compiler for LSP )
-- make ( for native fzf to work )
-- xclip ( for clipboard between vm and host )
+- RipGrep (Telescope FuzzyFinder)
+- gcc (System GNU C compiler for treesitter)
+- g++ (System GNU C++ compiler for treesitter)
+- make (for native fzf to work)
+- xclip (for clipboard between vm and host)
 
 ```bash
 # Ubuntu
-sudo apt install git ripgrep gcc g++ make
+sudo apt install -y git ripgrep gcc g++ make
 # Opensuse
-sudo zypper install git ripgrep gcc gcc-c++ make
+sudo zypper install -y git ripgrep gcc gcc-c++ make
 ```
 
 1.) Install latest neovim appimage
