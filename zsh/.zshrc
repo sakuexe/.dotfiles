@@ -58,6 +58,9 @@ fi
 
 unsetopt nullglob  # Disable the nullglob option after use
 
+# Fixes the issue where password-store's completion doesn't work
+autoload -Uz compinit && compinit
+
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
