@@ -1,3 +1,6 @@
+# clear the terminal
+alias c="clear"
+
 # ls
 alias la="ls -laFh --color=auto"  # show all
 alias ll="ls -lhpg --color=auto"  # long format, hide hidden
