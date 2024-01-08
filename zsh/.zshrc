@@ -61,6 +61,15 @@ unsetopt nullglob  # Disable the nullglob option after use
 # Fixes the issue where password-store's completion doesn't work
 autoload -Uz compinit && compinit
 
+# autostart tmux if installed
+if command -v tmux>/dev/null; then
+  # check if shell is interactive and tmux is not already running
+  if [[ ! -z "$PS1" ]] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]]
+  then
+    tmux a || tmux
+  fi
+fi
+
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
