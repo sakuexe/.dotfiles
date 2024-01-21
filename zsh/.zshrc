@@ -44,7 +44,7 @@ setopt nullglob  # Enable the nullglob option
 zsh_scripts=($script_folder/*.zsh)
 if [ ${#zsh_scripts[@]} -gt 0 ]; then
     for zsh_script in $zsh_scripts; do
-        chmod +x "$zsh_script"
+        source "$zsh_script"
     done
 fi
 
@@ -52,7 +52,7 @@ fi
 sh_scripts=($script_folder/*.sh)
 if [ ${#sh_scripts[@]} -gt 0 ]; then
     for sh_script in $sh_scripts; do
-        chmod +x "$sh_script"
+        source "$sh_script"
     done
 fi
 

@@ -33,9 +33,6 @@ alias update="sudo zypper ref && sudo zypper dup -y && sudo flatpak update -y"
 # git
 gitcd() { cd "$(git rev-parse --show-toplevel)" } # cd to the project's root folder
 alias gitref="git rm -rf --cached . > /dev/null && git add . && git status"
-# scripts
-alias gitpub="$ZDOTDIR/scripts/git-publish.sh"
-alias gitinit="$ZDOTDIR/scripts/git-setup.sh"
 # lazygit
 alias lg="lazygit"
 

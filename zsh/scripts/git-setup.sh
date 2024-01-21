@@ -1,33 +1,36 @@
 #!/bin/bash
-
 # $@ = All arguments, $1, $2 = first and second argument
 
 RED='\e[31m'
 GREEN='\e[32m'
 CLEAR='\e[0m' # Reset color
 
-# if the first argument is empty
-if [ -z "$1" ]
-then
-  INIT_MSG='initial commit'
-else
-  INIT_MSG="$1"
-fi
+git_init() {
+  # if the first argument is empty
+  if [ -z "$1" ]
+  then
+    INIT_MSG='initial commit'
+  else
+    INIT_MSG="$1"
+  fi
 
-# if the second argument is empty
-if [ -z "$2" ]
-then
-  BRANCH='main'
-else
-  BRANCH="$2"
-fi
+  # if the second argument is empty
+  if [ -z "$2" ]
+  then
+    BRANCH='main'
+  else
+    BRANCH="$2"
+  fi
 
-echo "Provide a link to the remote:"
-read -r REMOTE
+  echo "Provide a link to the remote:"
+  read -r REMOTE
 
-git init
-git add .
-git commit -m "$INIT_MSG"
-git branch -M "$BRANCH"
-git remote add origin $REMOTE
-git push -u origin $BRANCH
+  git init
+  git add .
+  git commit -m "$INIT_MSG"
+  git branch -M "$BRANCH"
+  git remote add origin $REMOTE
+  git push -u origin $BRANCH
+}
+
+alias gitinit=git_init
