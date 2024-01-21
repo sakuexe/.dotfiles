@@ -6,14 +6,15 @@ always appreciated! :)
 
 ## Install Guides
 
-I am using a `.dotfiles/` folder for my dotfiles, so the instructions will
-be tailored towards that style. If you do not wish that, you can freely modify
-the commands to suit your style.
+Each folder in this repository contains a `README.md` file with a guide for
+installing the configuration files in that folder.
 
-### cloning the `.dotfiles/` folder
+### cloning the repository
 
 ```bash
 git clone https://github.com/sakuexe/.dotfiles ~/.dotfiles
+mv ~/.dotfiles/* ~/.config/
+mv ~/.dotfiles/.* ~/.config/
 ```
 
 ### Zsh
