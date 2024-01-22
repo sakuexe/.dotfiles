@@ -8,20 +8,8 @@ fi
 # load the powerlevel10k theme
 source "$ZPLUGINDIR/powerlevel10k/powerlevel10k.zsh-theme"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# Hyphen insensitive completion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z-_}={A-Za-z_-}'
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# User configuration
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then

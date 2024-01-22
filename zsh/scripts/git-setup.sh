@@ -5,7 +5,9 @@ RED='\e[31m'
 GREEN='\e[32m'
 CLEAR='\e[0m' # Reset color
 
-git_init() {
+# gitinit - git initialize a new repository
+# adds all changes, commits them with a message, and pushes to remote
+gitinit () {
   # if the first argument is empty
   if [ -z "$1" ]
   then
@@ -32,5 +34,3 @@ git_init() {
   git remote add origin $REMOTE
   git push -u origin $BRANCH
 }
-
-alias gitinit=git_init

@@ -4,7 +4,9 @@ RED="\e[31m"
 GREEN="\e[32m"
 CLEAR="\e[0m"
 
-git_publish () {
+# gitpub - git publish
+# adds all changes, commits them with a message, and pushes to remote
+gitpub () {
   COMMIT_MSG=$1
   DEFAULT_REMOTE=`git remote | head -n 1`
   DEFAULT_BRANCH=`git branch --show-current`
@@ -58,5 +60,3 @@ git_publish () {
     echo -e "${GREEN}Pushed succesfully to $REMOTE/$BRANCH.${CLEAR}"
   fi
 }
-
-alias gitpub=git_publish
