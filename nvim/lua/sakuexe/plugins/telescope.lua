@@ -30,6 +30,11 @@ telescope.setup({
 				["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 			},
 		},
+		-- ignore folders and files with this pattern
+		-- automatically ignores everything in .gitignore
+		file_ignore_patterns = {
+			"venv",
+		},
 	},
 })
 
