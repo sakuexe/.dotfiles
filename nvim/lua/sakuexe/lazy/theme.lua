@@ -1,4 +1,4 @@
-function colorschemeTweaks(color)
+function ColorschemeTweaks(color)
 	color = color or "palenightfall"
 	vim.cmd.colorscheme(color)
 
@@ -18,7 +18,7 @@ return {
     config = function()
       -- load the colorscheme here
       vim.cmd([[colorscheme palenightfall]])
-      colorschemeTweaks()
+      ColorschemeTweaks()
     end,
   },
   {
