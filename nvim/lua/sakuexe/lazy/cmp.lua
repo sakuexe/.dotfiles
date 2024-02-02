@@ -1,14 +1,14 @@
 return {
   {
     "hrsh7th/nvim-cmp",
-
     dependencies = {
+      -- cmp sources
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
-      "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
+      -- for nice icons inside of cmp
       "onsails/lspkind.nvim",
     },
 
@@ -31,6 +31,8 @@ return {
                 require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
               end,
             },
+
+            -- keymaps
             mapping = cmp.mapping.preset.insert({
               ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
               ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
@@ -40,16 +42,20 @@ return {
               ["<C-Space>"] = cmp.mapping.complete(), -- show completion window
               ["<C-e>"] = cmp.mapping.abort(),        -- hide completion window
             }),
+
+            -- sources for cmp
             sources = cmp.config.sources({
               -- LSP
               { name = 'nvim_lsp' },
               -- Snippets
               { name = 'luasnip' },
               -- words in buffer
-              { name = 'buffer' },
+              { name = 'buffer', keyword_length = 4 },
               -- paths
               { name = 'path' },
             }),
+
+            -- styling
             window = {
               completion = cmp.config.window.bordered(window_style),
               documentation = cmp.config.window.bordered(window_style),
@@ -57,13 +63,16 @@ return {
             view = {
               entries = { name = "custom", selection_order = "near_cursor" },
             },
+
           })
         },
+
+        -- format of information getting shown in cmp
         formatting = {
           format = lspkind.cmp_format({
             mode = "symbol_text",
             menu = ({
-              buffer = "[Buffer]",
+              buffer = "[Buf]",
               nvim_lsp = "[LSP]",
               luasnip = "[LuaSnip]",
               path = "[Path]",

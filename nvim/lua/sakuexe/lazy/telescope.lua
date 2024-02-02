@@ -1,8 +1,8 @@
 return {
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.5", -- or, branch = '0.1.x',
-		dependencies = { "nvim-lua/plenary.nvim" },
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.5", -- or, branch = '0.1.x',
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require('telescope').setup({
         defaults = {
@@ -23,7 +23,7 @@ return {
       -- find recents
       vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
       -- text search with grep
-      vim.keymap.set('n', '<leader>ft', builtin.live_grep, {})
+      vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
       -- search word under cursor
       vim.keymap.set('n', '<leader>ps', function()
         local word = vim.fn.expand("<cword>")
@@ -37,5 +37,5 @@ return {
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
     end
-	},
+  },
 }
