@@ -17,6 +17,11 @@ return {
       local lspkind = require("lspkind")
       -- show LSP in cmp window
       local cmp_select = { behavior = cmp.SelectBehavior.Select }
+      local window_style = {
+        border = "single",
+        -- search colors with :highlight
+        winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSbar,Search:None",
+      }
 
       cmp.setup({
         snippet = {
@@ -46,8 +51,8 @@ return {
               { name = 'path' },
             }),
             window = {
-              completion = cmp.config.window.bordered(),
-              documentation = cmp.config.window.bordered(),
+              completion = cmp.config.window.bordered(window_style),
+              documentation = cmp.config.window.bordered(window_style),
             },
             view = {
               entries = { name = "custom", selection_order = "near_cursor" },
