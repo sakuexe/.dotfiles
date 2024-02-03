@@ -2,6 +2,11 @@
 # https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
 
 tmux-windowizer () {
+  # check if fzf is installed
+  if ! command -v fzf &> /dev/null; then
+    echo "fzf is not installed"
+    exit 1
+  fi
   selected_dir=$(find ~/code ~/Downloads -mindepth 1 -maxdepth 1 -type d | fzf)
 
   # early exit if nothing is selected
