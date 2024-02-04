@@ -7,7 +7,7 @@ tmux-windowizer () {
     echo "fzf is not installed"
     exit 1
   fi
-  selected_dir=$(find ~/code ~/Downloads -mindepth 1 -maxdepth 1 -type d | fzf)
+  selected_dir=$(find ~/code ~/Downloads ~/.config -mindepth 1 -maxdepth 1 -type d | fzf)
 
   # early exit if nothing is selected
   if [[ -z $selected_dir ]]; then
