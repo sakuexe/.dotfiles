@@ -7,9 +7,6 @@ local keymap = vim.keymap.set
 -- reload nvim with F5
 keymap("n", "<F5>", ":luafile%<CR>")
 
--- format buffet with lsp
-keymap("n", "<C-F>", ":lua vim.lsp.buf.format()<CR>")
-
 -- remove search highlight with leader-nh
 keymap("n", "<leader>nh", ":nohlsearch<CR>")
 

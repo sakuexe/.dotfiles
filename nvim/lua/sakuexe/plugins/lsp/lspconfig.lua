@@ -18,6 +18,7 @@ local keymap = vim.keymap
 -- enables keybinds for available lsp server
 local on_attach = function(client, bufnr)
 	-- keybind options
+  vim.api.nvim_set_hl(0, "NormalFloat", {bg="#3B4252"})
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
 	-- set keybinds
