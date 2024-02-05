@@ -116,7 +116,7 @@ nvim # :checkhealth
 
 #### Git
 
-- [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Shows Git color-coded lines on the left side
+- [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Git decorations
 
 #### Undo tree
 
