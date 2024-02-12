@@ -4,6 +4,9 @@ vim.g.mapleader = " "
 -- for conciseness
 local keymap = vim.keymap.set
 
+-- open netrw
+keymap("n", "<leader>e", ":Explore<CR>")
+
 -- reload nvim with F5
 keymap("n", "<F5>", ":luafile%<CR>")
 
