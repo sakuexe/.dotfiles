@@ -26,6 +26,8 @@ return {
         }
       })
       vim.cmd([[colorscheme onedark]])
+      -- colorcolumn
+      vim.cmd("highlight ColorColumn guibg=#303030")
     end,
   },
   "folke/tokyonight.nvim",

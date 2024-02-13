@@ -52,9 +52,9 @@ keymap("n", "+", "<C-a>")
 keymap("n", "-", "<C-x>")
 
 -- window splitting hotkeys
-keymap("n", "<leader>sv", "<C-w>v") -- split vertically
-keymap("n", "<leader>sh", "<C-w>h") -- split horizontally
-keymap("n", "<leader>se", "<C-w>=") -- make splits equal width
+keymap("n", "<leader>sv", "<C-w>v")     -- split vertically
+keymap("n", "<leader>sh", "<C-w>h")     -- split horizontally
+keymap("n", "<leader>se", "<C-w>=")     -- make splits equal width
 keymap("n", "<leader>sx", ":close<CR>") -- close current split
 
 -- rewrite all occurences of word under cursor in current buffer
@@ -73,3 +73,14 @@ keymap("v", "K", ":m '<-2<CR>gv=gv")
 keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")
 keymap("v", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- enable colorcolumn
+function ToggleColorColumn()
+  if (vim.o.colorcolumn == "80") then
+    vim.cmd("set colorcolumn=0")
+  else
+    vim.cmd("set colorcolumn=80")
+  end
+end
+
+keymap("n", "<leader>cc", ToggleColorColumn)
