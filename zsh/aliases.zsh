@@ -44,3 +44,9 @@ alias ....="cd ../../.."
 
 # make a directory and jump to it
 mkcdir() { mkdir -p "$1" && cd "$1" }
+
+# Django development
+alias dj="python3 manage.py"
+alias djrun="python3 manage.py runserver"
+alias djmig="python3 manage.py makemigrations && python3 manage.py migrate"
+alias djshell="python3 manage.py shell"
