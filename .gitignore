@@ -8,6 +8,7 @@
 !nvim/
 !tmux/
 !zsh/
+!alacritty/
 
 # remove unneeded zsh files
 zsh/.zsh_history
