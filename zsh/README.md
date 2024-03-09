@@ -34,6 +34,14 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh
 zsh
 ```
 
+5. Make zsh the default shell
+
+```bash
+chsh
+# /bin/zsh
+sudo reboot
+```
+
 ### Optional
 
 - Install [Nerd Fonts](https://www.nerdfonts.com/font-downloads) for the PowerLevel10k theme to work as intended
