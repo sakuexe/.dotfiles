@@ -9,6 +9,7 @@
 !tmux/
 !zsh/
 !alacritty/
+!static/
 
 # remove unneeded zsh files
 zsh/.zsh_history
