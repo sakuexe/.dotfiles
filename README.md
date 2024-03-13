@@ -4,6 +4,8 @@ This repository includes all the configuration files that I use, as well as
 guides for installing them. Recommendations and helpful suggestions are
 always appreciated! :)
 
+![Terminal with my development environment](./static/dotfiles-preview.png) 
+
 ## Install Guides
 
 Each folder in this repository contains a `README.md` file with a guide for
