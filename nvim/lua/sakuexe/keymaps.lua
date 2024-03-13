@@ -3,15 +3,16 @@ vim.g.mapleader = " "
 
 -- for conciseness
 local keymap = vim.keymap.set
+local silent = { silent = true }
 
 -- open netrw
-keymap("n", "<leader>e", ":Explore<CR>")
+keymap("n", "<leader>e", ":Explore<CR>", silent)
 
 -- reload nvim with F5
 keymap("n", "<F5>", ":luafile%<CR>")
 
 -- remove search highlight with leader-nh
-keymap("n", "<leader>nh", ":nohlsearch<CR>")
+keymap("n", "<leader>nh", ":nohlsearch<CR>", silent)
 
 -- when jumping half pages, keep cursor in the center
 keymap("n", "<C-d>", "<C-d>zz")
@@ -22,20 +23,20 @@ keymap("n", "n", "nzzzv")
 keymap("n", "N", "Nzzzv")
 
 -- use tab to move between buffers
-keymap("n", "<Tab>", ":bnext<CR>zz")
-keymap("n", "<S-Tab>", ":bprev<CR>zz")
+keymap("n", "<Tab>", ":bnext<CR>zz", silent)
+keymap("n", "<S-Tab>", ":bprev<CR>zz", silent)
 
 -- delete buffer with leader bd
-keymap("n", "<leader>bd", ":bd<CR>")
+keymap("n", "<leader>bd", ":bd<CR>", silent)
 
 -- when moving lines with J, keep cursor in place
 keymap("n", "J", "mzJ`z")
 
 -- set ALT + movement keys to resize windows
-keymap("n", "<M-k>", ":resize +2<CR>")
-keymap("n", "<M-j>", ":resize -2<CR>")
-keymap("n", "<M-l>", ":vertical resize +2<CR>")
-keymap("n", "<M-h>", ":vertical resize -2<CR>")
+keymap("n", "<M-k>", ":resize +2<CR>", silent)
+keymap("n", "<M-j>", ":resize -2<CR>", silent)
+keymap("n", "<M-l>", ":vertical resize +2<CR>", silent)
+keymap("n", "<M-h>", ":vertical resize -2<CR>", silent)
 
 -- Paste over text without replacing it in copy
 -- (One of my favorite keymaps)
@@ -66,8 +67,8 @@ keymap("i", "jk", "<Esc>")
 
 -- Visual Mode
 -- move lines that are selected
-keymap("v", "J", ":m '>+1<CR>gv=gv")
-keymap("v", "K", ":m '<-2<CR>gv=gv")
+keymap("v", "J", ":m '>+1<CR>gv=gv", silent)
+keymap("v", "K", ":m '<-2<CR>gv=gv", silent)
 
 -- better indenting, don't remove selection after
 keymap("v", "<", "<gv")
