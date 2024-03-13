@@ -11,5 +11,6 @@
 -- core settings
 require("sakuexe.options")
 require("sakuexe.keymaps")
+require("sakuexe.after.filetypes")
 -- plugins
 require("sakuexe.lazy_init")

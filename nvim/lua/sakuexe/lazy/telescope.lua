@@ -17,9 +17,15 @@ return {
 
       local builtin = require('telescope.builtin')
 
+      vim.keymap.set('n', '<C-p>', function()
+        local success, _ = pcall(builtin.git_files)
+        if not success then
+          -- if git_files couldn't be run, use find_files instead
+          return builtin.find_files()
+        end
+      end, {})
+      -- find files with the base of current dir
       vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-      -- show hidden files
-      vim.keymap.set('n', '<C-p>', builtin.git_files, {})
       -- find recents
       vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
       -- text search with grep
