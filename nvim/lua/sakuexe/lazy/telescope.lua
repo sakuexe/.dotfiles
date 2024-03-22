@@ -41,6 +41,7 @@ return {
         builtin.grep_string({ search = word })
       end)
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+      vim.keymap.set('n', '<C-b>', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
     end
   },
