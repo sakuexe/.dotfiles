@@ -5,13 +5,13 @@ tmux-windowizer () {
   # check if fzf is installed
   if ! command -v fzf &> /dev/null; then
     echo "fzf is not installed"
-    exit 1
+    return
   fi
-  selected_dir=$(find ~/code ~/Downloads ~/.config -mindepth 1 -maxdepth 1 -type d | fzf)
+  selected_dir=$(find ~/code -mindepth 1 -maxdepth 1 -type d | fzf)
 
   # early exit if nothing is selected
   if [[ -z $selected_dir ]]; then
-    exit 0
+    return
   fi
 
   tmux new-window -c $selected_dir -n $(basename $selected_dir)
