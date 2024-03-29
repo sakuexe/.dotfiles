@@ -28,7 +28,7 @@ alias initlua="nvim $XDG_CONFIG_HOME/nvim/init.lua"
 # Ubuntu
 # alias update="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 # OpenSuse Tumbleweed
-alias update="sudo zypper ref && sudo zypper dup -y && sudo flatpak update -y"
+alias update="sudo zypper ref && sudo zypper dup --allow-vendor-change && sudo flatpak update -y"
 
 # git
 gitcd() { cd "$(git rev-parse --show-toplevel)" } # cd to the project's root folder
