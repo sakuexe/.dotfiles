@@ -25,9 +25,7 @@ gitpub () {
   then
     git commit -m "$COMMIT_MSG"
   else
-    echo -n "Give commit message.: "
-    read COMMIT_MSG
-    git commit -m "$COMMIT_MSG"
+    git commit
   fi
 
   REMOTES=`git remote | tr -d '\n'`
@@ -55,7 +53,7 @@ gitpub () {
   if [ $? -ne 0 ]
   then
     echo -e "${RED}Push failed.${CLEAR}"
-    exit 1
+    return
   else
     echo -e "${GREEN}Pushed succesfully to $REMOTE/$BRANCH.${CLEAR}"
   fi
