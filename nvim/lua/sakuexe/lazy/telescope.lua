@@ -17,6 +17,7 @@ return {
 
       local builtin = require('telescope.builtin')
 
+      -- the main search, respects gitignore, searches project
       vim.keymap.set('n', '<C-p>', function()
         local success, _ = pcall(builtin.git_files)
         if not success then
@@ -24,8 +25,10 @@ return {
           return builtin.find_files()
         end
       end, {})
-      -- find files with the base of current dir
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+      -- find files with the base of current dir, do not respect .gitignore
+      vim.keymap.set('n', '<leader>ff', function()
+        builtin.find_files({ no_ignore = true })
+      end)
       -- find recents
       vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
       -- text search with grep
