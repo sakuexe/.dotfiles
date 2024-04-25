@@ -26,10 +26,10 @@ return {
           ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
         },
       },
-      -- -- disable the pop-up messages
-      -- messages = {
-      --   enabled = false, -- enables the Noice messages UI
-      -- },
+      -- disable the pop-up messages
+      messages = {
+        enabled = false, -- enables the Noice messages UI
+      },
     },
   }
 }
