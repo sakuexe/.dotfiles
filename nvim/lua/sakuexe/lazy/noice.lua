@@ -14,7 +14,7 @@ return {
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
+      -- "rcarriga/nvim-notify",
     },
     event = "VeryLazy",
     opts = {
@@ -25,10 +25,6 @@ return {
           ["vim.lsp.util.stylize_markdown"] = true,
           ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
         },
-      },
-      -- disable the pop-up messages
-      messages = {
-        enabled = false, -- enables the Noice messages UI
       },
     },
   }

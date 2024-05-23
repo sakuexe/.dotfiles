@@ -45,6 +45,7 @@ return {
       end)
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
       vim.keymap.set('n', '<C-b>', builtin.buffers, {})
+      vim.keymap.set('n', '<leader><leader>', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
       -- go to references
       vim.keymap.set('n', 'gr', builtin.lsp_references, {})

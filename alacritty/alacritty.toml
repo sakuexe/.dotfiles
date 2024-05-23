@@ -1,5 +1,8 @@
 live_config_reload = true
 
+[font]
+size = 12
+
 [window]
 # full or none
 decorations = "full"
@@ -7,11 +10,17 @@ dynamic_title = true
 opacity = 0.95
 title = "terminal"
 
-[font]
-size = 12.0
-
 [cursor.style]
 shape = "Block"
+
+[keyboard]
+# these dont actually do anything, but they are here for reference
+# for when I inevitably forget how to increase the font size.
+bindings = [
+  { key = "=", mods = "Control", action = "IncreaseFontSize" },
+  { key = "-", mods = "Control", action = "DecreaseFontSize" },
+  { key = "0", mods = "Control", action = "ResetFontSize" },
+]
 
 [[hints.enabled]]
 command = "xdg-open"
