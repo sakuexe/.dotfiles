@@ -8,8 +8,10 @@ local silent = { silent = true }
 -- open netrw
 keymap("n", "<leader>e", ":Explore<CR>", silent)
 
--- open the quickfix list
+-- the quickfix list
 keymap("n", "<leader>q", ":copen<CR>", silent)
+keymap("n", "<Right>", ":cnext<CR>", silent)
+keymap("n", "<Left>", ":cprev<CR>", silent)
 
 -- reload nvim with F5
 keymap("n", "<F5>", ":luafile%<CR>")
