@@ -7,6 +7,7 @@ CLEAR="\e[0m"
 # gitpub - git publish
 # adds all changes, commits them with a message, and pushes to remote
 gitpub () {
+
   COMMIT_MSG=$1
   DEFAULT_REMOTE=`git remote | head -n 1`
   DEFAULT_BRANCH=`git branch --show-current`
@@ -15,7 +16,7 @@ gitpub () {
   GIT_ROOT=$(git rev-parse --show-toplevel)
 
   # initial refresh and removing all cached files
-  git --git-dir="$GIT_ROOT" rm -r --cached . > /dev/null 2>&1  # remove all files from being tracked
+  git --git-dir="$GIT_ROOT" rm -r --cached $GIT_ROOT > /dev/null 2>&1  # remove all files from being tracked
 
   # add all changes to the next commit
   git add -A
@@ -26,6 +27,13 @@ gitpub () {
     git commit -m "$COMMIT_MSG"
   else
     git commit
+  fi
+
+  # catch the exit code of the commit
+  if [ $? -ne 0 ]
+  then
+    echo -e "${RED}No commit message passed, exiting.${CLEAR}"
+    return
   fi
 
   REMOTES=`git remote | tr -d '\n'`
