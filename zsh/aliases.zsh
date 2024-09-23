@@ -39,6 +39,9 @@ alias gitopen="git remote get-url origin | xargs firefox"
 # lazygit
 alias lg="lazygit"
 
+# %h: abbreviated commit hash, %ad: commit date, %s: commit message
+retrogit() { git log --format="%h [%ad] %s" --date=short -- $1 | fzf --preview "echo {} | awk '{ print \$1 }' | xargs -I {} git show {}:./$1" }
+
 # other utility functions
 
 alias ..="cd .."
@@ -59,5 +62,3 @@ alias djshell="python3 manage.py shell"
 
 # filemanager
 alias fm="yazi || echo 'yazi not installed'"
-
-retrogit() { git log --format=oneline -- $1 | fzf --preview "echo {} | awk '{ print \$1 }' | xargs -I {} git show {}:./$1" }
