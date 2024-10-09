@@ -40,7 +40,7 @@ alias gitopen="git remote get-url origin | xargs firefox"
 alias lg="lazygit"
 
 # %h: abbreviated commit hash, %ad: commit date, %s: commit message
-retrogit() { git log --format="%h [%ad] %s" --date=short -- $1 | fzf --preview "echo {} | awk '{ print \$1 }' | xargs -I {} git show {}:./$1" }
+retrogit() { git log --format="[%ad] %h - %s" --date=short -- $1 | fzf --preview "echo {} | awk '{ print \$2 }' | xargs -I {} git show {}:./$1" }
 
 # other utility functions
 
