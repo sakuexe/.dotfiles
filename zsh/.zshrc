@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # load the powerlevel10k theme
-source "$ZPLUGINDIR/powerlevel10k/powerlevel10k.zsh-theme"
+# source "$ZPLUGINDIR/powerlevel10k/powerlevel10k.zsh-theme"
 
 # Hyphen insensitive completion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z-_}={A-Za-z_-}'
@@ -69,6 +69,10 @@ setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_ignore_dups
 setopt hist_save_no_dups
+
+# enable ctrl r, ctrl e and other essentials
+# https://gist.github.com/acamino/2bc8df5e2ed0f99ddbe7a6fddb7773a6
+bindkey -e
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
