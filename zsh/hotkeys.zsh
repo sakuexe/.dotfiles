@@ -1,3 +1,5 @@
+# enable emacs mode
+bindkey -e
 # include some of the niceties of vi mode
 # without actually using vi mode
 bindkey "[[~1" beginning-of-line # home button
