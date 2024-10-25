@@ -24,6 +24,9 @@ source "$ZDOTDIR/plugins.zsh"
 # Load aliases
 source "$ZDOTDIR/aliases.zsh"
 
+# Load zsh hotkeys
+source "$ZDOTDIR/hotkeys.zsh"
+
 # Set scripts to be executable
 script_folder="$ZDOTDIR/scripts"
 setopt nullglob  # Enable the nullglob option
@@ -69,10 +72,6 @@ setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_ignore_dups
 setopt hist_save_no_dups
-
-# enable ctrl r, ctrl e and other essentials
-# https://gist.github.com/acamino/2bc8df5e2ed0f99ddbe7a6fddb7773a6
-bindkey -e
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
