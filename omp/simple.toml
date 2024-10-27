@@ -2,6 +2,11 @@ version = 2
 final_space = true
 console_title_template = '{{ .Shell }} in {{ .Folder }}'
 
+[var]
+  StagingIcon = "+"
+  WorkingIcon = "!"
+  UntrackedIcon = "?"
+
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
@@ -11,18 +16,19 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     type = 'path'
     style = 'plain'
     background = 'transparent'
-    foreground = 'blue'
-    template = '{{ .Path }}'
+    foreground = 'default'
+    template = '<magenta>[<blue>{{ .Path }}<magenta>@{{ .HostName }}<magenta>]'
 
     [blocks.segments.properties]
       style = 'full'
 
   [[blocks.segments]]
+
     type = 'git'
     style = 'plain'
-    foreground = 'p:grey'
+    foreground = '#darkGray'
     background = 'transparent'
-    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+    template = '<foreground> {{ .HEAD }} {{ if .Staging.Changed }}<yellow>{{ .Var.StagingIcon }}{{ add .Staging.Modified .Staging.Added .Staging.Deleted }} {{ end }}{{ if (add .Working.Modified .Working.Added .Working.Deleted) }}<yellow>{{ .Var.WorkingIcon }}{{ add .Working.Modified .Working.Added .Working.Deleted }} {{ end }}{{ if .Working.Untracked }}<cyan>{{ .Var.UntrackedIcon }}{{ .Working.Untracked }} {{ end }}<cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
 
     [blocks.segments.properties]
       branch_icon = ''
@@ -41,7 +47,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     template = '{{ .FormattedMs }}'
 
     [blocks.segments.properties]
-      threshold = 5000
+      threshold = 500
 
 [[blocks]]
   type = 'prompt'
