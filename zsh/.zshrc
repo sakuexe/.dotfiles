@@ -70,4 +70,5 @@ if ! type "oh-my-posh" > /dev/null; then
 fi
 
 # use oh-my-posh
-eval "$(oh-my-posh init zsh)"
+$OMP_THEME="simple.toml"
+eval "$(oh-my-posh init zsh --config ~/.config/omp/$OMP_THEME)"
