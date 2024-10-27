@@ -36,10 +36,9 @@ return {
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = {
-        "tsserver",
+        "ts_ls",
         "gopls",
         "lua_ls",
-        "pylsp",
         "html",
         "cssls",
         "tailwindcss",
@@ -55,7 +54,7 @@ return {
           })
         end,
 
-        ["tsserver"] = function()
+        ["ts_ls"] = function()
           local lspconfig = require("lspconfig")
           lspconfig.tsserver.setup {
             settings = {
