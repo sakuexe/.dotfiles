@@ -1,13 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# load the powerlevel10k theme
-# source "$ZPLUGINDIR/powerlevel10k/powerlevel10k.zsh-theme"
-
 # Hyphen insensitive completion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z-_}={A-Za-z_-}'
 
@@ -73,5 +63,11 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_dups
 setopt hist_save_no_dups
 
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+# install oh-my-posh if it is not installed
+if ! type "oh-my-posh" > /dev/null; then
+  echo "oh-my-posh is not installed, installing to ~/.local/bin"
+  curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin
+fi
+
+# use oh-my-posh
+eval "$(oh-my-posh init zsh)"

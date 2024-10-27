@@ -20,8 +20,6 @@ ln -s ~/.config/zsh/.zshenv ~/
 3. Git clone the the plugins
 
 ```bash
-# theme: PowerLevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/plugins/powerlevel10k
 # zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/plugins/zsh-autosuggestions
 # zsh-syntax-highlighting
