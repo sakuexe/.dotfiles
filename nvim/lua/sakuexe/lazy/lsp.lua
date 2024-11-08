@@ -32,6 +32,9 @@ return {
         })
     end
 
+    -- use csharp_ls
+    require("lspconfig").csharp_ls.setup({ capabilities = capabilities })
+
     -- set up the LSP
     require("mason").setup()
     require("mason-lspconfig").setup({
@@ -45,6 +48,8 @@ return {
         "emmet_ls",
         "jsonls",
       },
+
+
       automatic_installation = true,
       handlers = {
         function(server_name) -- default handler
