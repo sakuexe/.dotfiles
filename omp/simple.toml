@@ -49,6 +49,16 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     [blocks.segments.properties]
       threshold = 500
 
+  [[blocks.segments]]
+    type = 'nix-shell'
+    style = 'plain'
+    foreground = 'blue'
+    background = 'transparent'
+    template = '(nix-shell-{{ .Type }})'
+
+    [blocks.segments.properties]
+      threshold = 500
+
 [[blocks]]
   type = 'prompt'
   alignment = 'left'

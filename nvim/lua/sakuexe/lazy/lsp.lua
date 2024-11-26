@@ -32,7 +32,7 @@ return {
         })
     end
 
-    -- use csharp_ls
+    -- use csharp_ls (it needs specific stuff because fuck you I guess)
     require("lspconfig").csharp_ls.setup({ capabilities = capabilities })
 
     -- set up the LSP
