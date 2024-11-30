@@ -7,7 +7,17 @@ tmux-windowizer () {
     echo "fzf is not installed"
     return
   fi
-  selected_dir=$(find ~/code -mindepth 1 -maxdepth 1 -type d | fzf)
+
+  # get all the dirs inside the specified dirs
+  # also suppress the error messages (so it doesn't matter if all the folders are present)
+  all_dirs=$(find ~/Code ~/Nixos -maxdepth 1 -type d 2>/dev/null)
+
+  if [[ -z $all_dirs ]]; then
+    echo "No specified directories (~/Code, ~/Nixos) were found"
+    return
+  fi
+
+  selected_dir=$(echo $all_dirs | fzf)
 
   # early exit if nothing is selected
   if [[ -z $selected_dir ]]; then
