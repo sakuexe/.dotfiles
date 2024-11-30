@@ -12,6 +12,7 @@
 !static/
 !omp/
 !conky/
+!fastfetch/
 
 # remove unneeded zsh files
 zsh/.zsh_history
