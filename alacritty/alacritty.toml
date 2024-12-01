@@ -6,7 +6,7 @@ size = 12
 # full or none
 decorations = "full"
 dynamic_title = true
-opacity = 0.95
+opacity = 0.90
 title = "terminal"
 
 [cursor.style]
