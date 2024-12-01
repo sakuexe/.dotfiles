@@ -6,6 +6,9 @@ always appreciated! :)
 
 ![Terminal with my development environment](./static/dotfiles_preview_2024.png) 
 
+Helpful tips and tricks are combined by me in the Wiki of this repository.
+[Useful commands - .dotfiles Wiki](https://github.com/sakuexe/.dotfiles/wiki/Useful-commands)
+
 ## Install Guides
 
 Each folder in this repository contains a `README.md` file with a guide for
