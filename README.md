@@ -4,7 +4,7 @@ This repository includes all the configuration files that I use, as well as
 guides for installing them. Recommendations and helpful suggestions are
 always appreciated! :)
 
-![Terminal with my development environment](./static/dotfiles-preview.png) 
+![Terminal with my development environment](./static/dotfiles_preview_2024.png) 
 
 ## Install Guides
 
