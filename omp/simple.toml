@@ -1,11 +1,21 @@
-version = 2
-final_space = true
 console_title_template = '{{ .Shell }} in {{ .Folder }}'
+version = 3
+final_space = true
 
 [var]
-  StagingIcon = "+"
-  WorkingIcon = "!"
-  UntrackedIcon = "?"
+  StagingIcon = '+'
+  UntrackedIcon = '?'
+  WorkingIcon = '!'
+
+[secondary_prompt]
+  template = '❯❯ '
+  foreground = 'magenta'
+  background = 'transparent'
+
+[transient_prompt]
+  template = '❯ '
+  background = 'transparent'
+  foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
 
 [[blocks]]
   type = 'prompt'
@@ -13,25 +23,26 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   newline = true
 
   [[blocks.segments]]
+    template = '<magenta>[<blue>{{ .Path }}<magenta>@{{ .HostName }}<magenta>]'
+    foreground = 'default'
+    background = 'transparent'
     type = 'path'
     style = 'plain'
-    background = 'transparent'
-    foreground = 'default'
-    template = '<magenta>[<blue>{{ .Path }}<magenta>@{{ .HostName }}<magenta>]'
 
     [blocks.segments.properties]
+      cache_duration = 'none'
       style = 'full'
 
   [[blocks.segments]]
-
-    type = 'git'
-    style = 'plain'
+    template = '<foreground> {{ .HEAD }} {{ if .Staging.Changed }}<yellow>{{ .Var.StagingIcon }}{{ add .Staging.Modified .Staging.Added .Staging.Deleted }} {{ end }}{{ if (add .Working.Modified .Working.Added .Working.Deleted) }}<yellow>{{ .Var.WorkingIcon }}{{ add .Working.Modified .Working.Added .Working.Deleted }} {{ end }}{{ if .Working.Untracked }}<cyan>{{ .Var.UntrackedIcon }}{{ .Working.Untracked }} {{ end }}<cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
     foreground = '#darkGray'
     background = 'transparent'
-    template = '<foreground> {{ .HEAD }} {{ if .Staging.Changed }}<yellow>{{ .Var.StagingIcon }}{{ add .Staging.Modified .Staging.Added .Staging.Deleted }} {{ end }}{{ if (add .Working.Modified .Working.Added .Working.Deleted) }}<yellow>{{ .Var.WorkingIcon }}{{ add .Working.Modified .Working.Added .Working.Deleted }} {{ end }}{{ if .Working.Untracked }}<cyan>{{ .Var.UntrackedIcon }}{{ .Working.Untracked }} {{ end }}<cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+    type = 'git'
+    style = 'plain'
 
     [blocks.segments.properties]
       branch_icon = ''
+      cache_duration = 'none'
       commit_icon = '@'
       fetch_status = true
 
@@ -40,23 +51,25 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   overflow = 'hidden'
 
   [[blocks.segments]]
-    type = 'executiontime'
-    style = 'plain'
+    template = '{{ .FormattedMs }}'
     foreground = 'yellow'
     background = 'transparent'
-    template = '{{ .FormattedMs }}'
+    type = 'executiontime'
+    style = 'plain'
 
     [blocks.segments.properties]
+      cache_duration = 'none'
       threshold = 500
 
   [[blocks.segments]]
-    type = 'nix-shell'
-    style = 'plain'
+    template = '(nix-shell-{{ .Type }})'
     foreground = 'blue'
     background = 'transparent'
-    template = '(nix-shell-{{ .Type }})'
+    type = 'nix-shell'
+    style = 'plain'
 
     [blocks.segments.properties]
+      cache_duration = 'none'
       threshold = 500
 
 [[blocks]]
@@ -65,24 +78,11 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   newline = true
 
   [[blocks.segments]]
+    template = '❯'
+    background = 'transparent'
     type = 'text'
     style = 'plain'
-    foreground_templates = [
-      "{{if gt .Code 0}}red{{end}}",
-      "{{if eq .Code 0}}magenta{{end}}",
-    ]
-    background = 'transparent'
-    template = '❯'
+    foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
 
-[transient_prompt]
-  foreground_templates = [
-    "{{if gt .Code 0}}red{{end}}",
-    "{{if eq .Code 0}}magenta{{end}}",
-  ]
-  background = 'transparent'
-  template = '❯ '
-
-[secondary_prompt]
-  foreground = 'magenta'
-  background = 'transparent'
-  template = '❯❯ '
+    [blocks.segments.properties]
+      cache_duration = 'none'
