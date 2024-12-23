@@ -34,8 +34,8 @@ alias update="sudo zypper ref && sudo zypper dup --allow-vendor-change && sudo f
 gitcd() { cd "$(git rev-parse --show-toplevel)" } # cd to the project's root folder
 alias gitref="git rm -rf --cached . > /dev/null && git add . && git status"
 alias gs="git status"
-# open the remote in firefox
-alias gitopen="git remote get-url origin | xargs firefox"
+# open the remote in firefox (quietly and in the background)
+alias gitopen="git remote get-url origin | xargs firefox > /dev/null 2>&1 &"
 # lazygit
 alias lg="lazygit"
 
