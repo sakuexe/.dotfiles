@@ -3,6 +3,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # find the .zshrc file
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZPLUGINDIR="$ZDOTDIR/plugins"
+# enable use of colors (and neovim) for man pages
+export MANPAGER='nvim +Man!'
 
 # WSL
 
