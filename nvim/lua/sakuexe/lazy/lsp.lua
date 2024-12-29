@@ -35,6 +35,22 @@ return {
     -- use csharp_ls (it needs specific stuff because fuck you I guess)
     require("lspconfig").csharp_ls.setup({ capabilities = capabilities })
 
+    -- nix language server
+    require("lspconfig").nixd.setup({
+      capabilities = capabilities,
+      cmd = { "nixd" },
+      settings = {
+        nixd = {
+          nixpkgs = {
+            expr = "import <nixpkgs> { }",
+          },
+          formatting = {
+            command = { "nixpkgs-fmt" }, -- or nixfmt || alejandra
+          },
+        },
+      },
+    })
+
     -- set up the LSP
     require("mason").setup()
     require("mason-lspconfig").setup({
