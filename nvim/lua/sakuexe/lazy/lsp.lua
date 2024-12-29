@@ -33,11 +33,15 @@ return {
     end
 
     -- use csharp_ls (it needs specific stuff because fuck you I guess)
-    require("lspconfig").csharp_ls.setup({ capabilities = capabilities })
+    require("lspconfig").csharp_ls.setup({ 
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
 
     -- nix language server
     require("lspconfig").nixd.setup({
       capabilities = capabilities,
+      on_attach = on_attach,
       cmd = { "nixd" },
       settings = {
         nixd = {
@@ -45,7 +49,7 @@ return {
             expr = "import <nixpkgs> { }",
           },
           formatting = {
-            command = { "nixpkgs-fmt" }, -- or nixfmt || alejandra
+            command = { "nixfmt" }, -- or nixpkgs-fmt || alejandra
           },
           -- https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md
           options = {
