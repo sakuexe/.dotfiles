@@ -56,6 +56,9 @@ return {
             nixos = {
               expr = '(builtins.getFlake "github:sakuexe/Nixos").nixosConfigurations.ringtail.options',
             },
+            home_manager = {
+              expr = '(builtins.getFlake "github:sakuexe/Nixos").nixosConfigurations.ringtail.options.home-manager.users.value."${builtins.getEnv "USER"}"',
+            },
           },
         },
       },
