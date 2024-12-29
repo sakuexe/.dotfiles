@@ -47,6 +47,12 @@ return {
           formatting = {
             command = { "nixpkgs-fmt" }, -- or nixfmt || alejandra
           },
+          -- https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md
+          options = {
+            nixos = {
+              expr = '(builtins.getFlake "github:sakuexe/Nixos").nixosConfigurations.ringtail.options',
+            },
+          },
         },
       },
     })
