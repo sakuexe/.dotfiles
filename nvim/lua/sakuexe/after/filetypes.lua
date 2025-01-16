@@ -15,9 +15,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- this way it is easy to handle lsp format conflicts
 function generateFilteredFormat(lsp)
   return function()
-    vim.lsp.buf.format {
-      filter = function(client) return client.name ~= lsp end
-    }
+    vim.lsp.buf.format { filter = function(client) return client.name ~= lsp end }
   end
 end
 
