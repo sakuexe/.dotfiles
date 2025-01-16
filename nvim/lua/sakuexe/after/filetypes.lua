@@ -12,6 +12,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- returns a function that can be used as a keymap function
 -- the lsp param is the name of the language server you want to filter out
+-- this way it is easy to handle lsp format conflicts
 function generateFilteredFormat(lsp)
   return function()
     vim.lsp.buf.format {
@@ -20,10 +21,12 @@ function generateFilteredFormat(lsp)
   end
 end
 
--- templ: don't use gopls formatting
+-- templ: don't use html lsp's formatting
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "templ",
   callback = function()
-    vim.keymap.set("n", "<C-F>", generateFilteredFormat("gopls"), nil)
+    -- only apply the keymap set to current buffer
+    local opts = { buffer = true, }
+    vim.keymap.set("n", "<C-F>", generateFilteredFormat("html"), opts)
   end
 })
