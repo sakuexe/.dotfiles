@@ -99,6 +99,13 @@ return {
           }
         end,
 
+        ["emmet_ls"] = function()
+          local lspconfig = require("lspconfig")
+          lspconfig.emmet_ls.setup {
+            filetypes = { "templ" },
+          }
+        end,
+
         ["lua_ls"] = function()
           local lspconfig = require("lspconfig")
           lspconfig.lua_ls.setup {
