@@ -103,6 +103,8 @@ return {
           local lspconfig = require("lspconfig")
           lspconfig.emmet_ls.setup {
             filetypes = { "templ" },
+            capabilities = capabilities,
+            on_attach = on_attach,
           }
         end,
 

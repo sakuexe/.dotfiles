@@ -9,3 +9,13 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.tabstop = 4
   end
 })
+
+-- templ: don't use gopls formatting
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "templ",
+  callback = function()
+    vim.lsp.buf.format {
+      filter = function(client) return client.name ~= "gopls" end
+    }
+  end
+})
