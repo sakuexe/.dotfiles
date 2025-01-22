@@ -95,7 +95,16 @@ return {
         ["emmet_ls"] = function()
           local lspconfig = require("lspconfig")
           lspconfig.emmet_ls.setup {
-            filetypes = { "templ" },
+            filetypes = { "templ", "htmldjango", },
+            capabilities = capabilities,
+            on_attach = on_attach,
+          }
+        end,
+
+        ["html"] = function()
+          local lspconfig = require("lspconfig")
+          lspconfig.html.setup {
+            filetypes = { "htmldjango" },
             capabilities = capabilities,
             on_attach = on_attach,
           }
