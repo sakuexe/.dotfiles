@@ -104,7 +104,7 @@ return {
         ["html"] = function()
           local lspconfig = require("lspconfig")
           lspconfig.html.setup {
-            filetypes = { "htmldjango" },
+            filetypes = { "htmldjango", "templ" },
             capabilities = capabilities,
             on_attach = on_attach,
           }
