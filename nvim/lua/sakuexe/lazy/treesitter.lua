@@ -29,12 +29,14 @@ return {
         }
       })
 
+      -- TODO: move this to be activated in only specified files
+      -- after/ftplugin/nix for example
       -- automatically activate otter.nvim when entering a buffer
       -- https://neovim.io/doc/user/autocmd.html#BufEnter
-      vim.api.nvim_create_autocmd(
-        "BufEnter", {
-          command = [[ lua require("otter").activate() ]],
-        })
+      -- vim.api.nvim_create_autocmd(
+      --   "BufEnter", {
+      --     command = [[ lua require("otter").activate() ]],
+      --   })
     end
   }
 }
