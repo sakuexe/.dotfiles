@@ -2,6 +2,7 @@
 # remove everything
 /*
 # add content
+!install.sh
 !.gitignore
 !README.md
 !terminalthemes.jsonc
