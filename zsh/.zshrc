@@ -63,12 +63,6 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_dups
 setopt hist_save_no_dups
 
-# install oh-my-posh if it is not installed
-if ! type "oh-my-posh" > /dev/null; then
-  echo "oh-my-posh is not installed, installing to ~/.local/bin"
-  curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin
-fi
-
 # use oh-my-posh
 OMP_THEME="simple.toml"
 eval "$(oh-my-posh init zsh --config ~/.config/omp/$OMP_THEME)"
