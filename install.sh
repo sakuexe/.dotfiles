@@ -6,15 +6,29 @@ OS=$(grep '^NAME' /etc/os-release | sed 's/NAME=//')
 # install packages
 if [ "$OS" == '"Ubuntu"' ]; then
   sudo apt update && sudo apt install neovim tmux zsh \
-    git unzip curl nodejs ripgrep gcc g++ make -y
+    git unzip curl ripgrep gcc g++ make -y
+
+  # install node with nvm
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+  PROFILE_FILE=~/.zprofile
+  touch $PROFILE_FILE
+  if ! grep -q 'NVM_DIR' $PROFILE_FILE; then
+    echo 'export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ]' >> $PROFILE_FILE
+    echo 'printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"' >> $PROFILE_FILE
+    echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm' >> $PROFILE_FILE
+  fi
+  source $PROFILE_FILE
+  nvm install node # install the latest nodejs and npm
 fi
+
 if [ "$OS" == '"OpenSuse Tumbleweed"' ]; then
   sudo zypper ref && sudo zypper in neovim tmux zsh \
-    git unzip ripgrep gcc gcc-c++ make -y
+    git unzip ripgrep gcc gcc-c++ make nodejs -y
 fi
+
 if [ "$OS" == '"Arch Linux"' ]; then
   sudo pacman -Sy --noconfirm neovim tmux zsh \
-    git unzip ripgrep gcc g++ make
+    git unzip ripgrep gcc g++ make nodejs
 fi
 
 # zsh 
