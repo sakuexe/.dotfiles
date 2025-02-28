@@ -11,16 +11,22 @@ Helpful tips and tricks are combined by me in the Wiki of this repository.
 
 ## Install Guides
 
-Each folder in this repository contains a `README.md` file with a guide for
-installing the configuration files in that folder.
-
-### cloning the repository
-
 ```bash
 git clone https://github.com/sakuexe/.dotfiles ~/.dotfiles
-mv ~/.dotfiles/* ~/.config/
-mv ~/.dotfiles/.* ~/.config/
 ```
+
+### Installation script (recommended)
+
+The recommended way to install the dotfiles is via the `install.sh` bash script.
+It supports Ubuntu, Opensuse Tumbleweed and Arch Linux.
+
+```bash
+./install.sh
+```
+
+Each folder in this repository contains a `README.md` file with a guide for
+installing the configuration files in that folder. If you would like to pick and
+choose what to install.
 
 ### Zsh
 
