@@ -64,5 +64,8 @@ setopt hist_ignore_dups
 setopt hist_save_no_dups
 
 # use oh-my-posh
+if ! command -v oh-my-posh &> /dev/null && [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+  export PATH="$PATH:$HOME/.local/bin"
+fi
 OMP_THEME="simple.toml"
-eval "$(oh-my-posh init zsh --config ~/.config/omp/$OMP_THEME)"
+eval "$(oh-my-posh init zsh --config $XDG_CONFIG_HOME/omp/$OMP_THEME)"
