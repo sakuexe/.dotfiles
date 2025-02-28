@@ -17,7 +17,7 @@ tmux-sessionizer () {
     return
   fi
 
-  selected_dir=$(echo $all_dirs | fzf)
+  selected_dir=$(echo $all_dirs | fzf --preview "ls -laFh {}")
   selected_name=$(basename $selected_dir)
   tmux_running=$(pgrep tmux)
 

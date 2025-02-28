@@ -62,3 +62,6 @@ alias djshell="python3 manage.py shell"
 
 # filemanager
 alias fm="yazi || echo 'yazi not installed'"
+
+# Use fzf to search for available man pages
+alias fman="compgen -c | fzf | xargs man"
