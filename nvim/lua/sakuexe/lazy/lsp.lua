@@ -1,9 +1,19 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
     "hrsh7th/cmp-nvim-lsp",
+    {
+      -- make lua lsp find vim definitions
+      "folke/lazydev.nvim",
+      ft = "lua", -- only load on lua files
+      opts = {
+        library = {
+          -- See the configuration section for more details
+          -- Load luvit types when the `vim.uv` word is found
+          { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+        },
+      },
+    },
   },
 
   config = function()
@@ -25,14 +35,59 @@ return {
         })
     end
 
-    -- use csharp_ls (it needs specific stuff because fuck you I guess)
-    require("lspconfig").csharp_ls.setup({ 
+    local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
+    if not lspconfig_ok then
+      -- set an error message
+      print "Lspconfig could not be required (lsp.lua)"
+      return
+    end
+
+    -- the default lsp configuration
+    local lsps = { "cssls", "jsonls", "lua_ls", "csharp_ls", "volar" }
+    for _, lsp in ipairs(lsps) do
+      lspconfig[lsp].setup({
+        capabilities = capabilities,
+        on_attach = on_attach
+      })
+    end
+
+    lspconfig.ts_ls.setup {
+      settings = {
+        implicitProjectConfiguration = {
+          checkJs = true
+        },
+      },
+      init_options = {
+        -- enable vue lsp
+        plugins = {
+          {
+            name = "@vue/typescript-plugin",
+            location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+            languages = { "javascript", "typescript", "vue" },
+          },
+        },
+      },
+      filetypes = {
+        "javascript",
+        "typescript",
+        "vue",
+      },
+    }
+
+    lspconfig.emmet_ls.setup {
+      filetypes = { "templ", "htmldjango", },
       capabilities = capabilities,
       on_attach = on_attach,
-    })
+    }
+
+    lspconfig.html.setup {
+      filetypes = { "htmldjango", "templ" },
+      capabilities = capabilities,
+      on_attach = on_attach,
+    }
 
     -- nix language server
-    require("lspconfig").nixd.setup({
+    lspconfig.nixd.setup({
       capabilities = capabilities,
       on_attach = on_attach,
       cmd = { "nixd" },
@@ -50,93 +105,11 @@ return {
               expr = '(builtins.getFlake "github:sakuexe/Nixos").nixosConfigurations.ringtail.options',
             },
             home_manager = {
-              expr = '(builtins.getFlake "github:sakuexe/Nixos").nixosConfigurations.ringtail.options.home-manager.users.value."${builtins.getEnv "USER"}"',
+              expr =
+              '(builtins.getFlake "github:sakuexe/Nixos").nixosConfigurations.ringtail.options.home-manager.users.value."${builtins.getEnv "USER"}"',
             },
           },
         },
-      },
-    })
-
-    -- set up the LSP
-    require("mason").setup()
-    require("mason-lspconfig").setup({
-      ensure_installed = {
-        "ts_ls",
-        "lua_ls",
-        "html",
-        "cssls",
-        "emmet_ls",
-        "jsonls",
-      },
-
-
-      automatic_installation = true,
-      handlers = {
-        function(server_name) -- default handler
-          require("lspconfig")[server_name].setup({
-            capabilities = capabilities,
-            on_attach = on_attach
-          })
-        end,
-
-        ["ts_ls"] = function()
-          local lspconfig = require("lspconfig")
-          lspconfig.ts_ls.setup {
-            settings = {
-              implicitProjectConfiguration = {
-                checkJs = true
-              },
-            },
-            init_options = {
-              plugins = {
-                {
-                  name = "@vue/typescript-plugin",
-                  location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
-                  languages = {"javascript", "typescript", "vue"},
-                },
-              },
-            },
-            filetypes = {
-              "javascript",
-              "typescript",
-              "vue",
-            },
-
-          }
-        end,
-
-        ["emmet_ls"] = function()
-          local lspconfig = require("lspconfig")
-          lspconfig.emmet_ls.setup {
-            filetypes = { "templ", "htmldjango", },
-            capabilities = capabilities,
-            on_attach = on_attach,
-          }
-        end,
-
-        ["html"] = function()
-          local lspconfig = require("lspconfig")
-          lspconfig.html.setup {
-            filetypes = { "htmldjango", "templ" },
-            capabilities = capabilities,
-            on_attach = on_attach,
-          }
-        end,
-
-        ["lua_ls"] = function()
-          local lspconfig = require("lspconfig")
-          lspconfig.lua_ls.setup {
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = { "vim", "it", "describe", "before_each", "after_each" },
-                }
-              }
-            }
-          }
-        end,
       },
     })
   end

@@ -5,6 +5,11 @@ vim.g.mapleader = " "
 local keymap = vim.keymap.set
 local silent = { silent = true }
 
+-- source lua
+keymap("n", "<leader><leader>x", "<cmd>source %<CR>")
+keymap("n", "<leader>x", ":.lua<CR>")
+keymap("v", "<leader>x", ":.lua<CR>")
+
 -- open netrw
 keymap("n", "<leader>e", ":Explore<CR>", silent)
 
@@ -12,9 +17,6 @@ keymap("n", "<leader>e", ":Explore<CR>", silent)
 keymap("n", "<leader>q", ":copen<CR>", silent)
 keymap("n", "<Right>", ":cnext<CR>", silent)
 keymap("n", "<Left>", ":cprev<CR>", silent)
-
--- reload nvim with F5
-keymap("n", "<F5>", ":luafile%<CR>")
 
 -- remove search highlight with leader-nh
 keymap("n", "<leader>nh", ":nohlsearch<CR>", silent)
