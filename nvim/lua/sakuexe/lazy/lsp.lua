@@ -57,7 +57,15 @@ return {
     })
 
     -- the default lsp configuration
-    local lsps = { "cssls", "jsonls", "lua_ls", "csharp_ls", "volar" }
+    local lsps = {
+      "lua_ls",
+      "csharp_ls",
+      "gopls",
+      "templ",
+      "volar",
+      "cssls",
+      "jsonls",
+    }
     for _, lsp in ipairs(lsps) do
       lspconfig[lsp].setup({
         capabilities = capabilities,
