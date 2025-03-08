@@ -1,6 +1,8 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
     "hrsh7th/cmp-nvim-lsp",
     {
       -- make lua lsp find vim definitions
@@ -41,6 +43,17 @@ return {
       print "Lspconfig could not be required (lsp.lua)"
       return
     end
+
+    -- mason - for installing lsp's more easily
+    require("mason").setup()
+    require("mason-lspconfig").setup({
+      ensure_installed = {
+        "html",
+        "cssls",
+        "emmet_ls",
+        "jsonls",
+      }
+    })
 
     -- the default lsp configuration
     local lsps = { "cssls", "jsonls", "lua_ls", "csharp_ls", "volar" }
@@ -112,5 +125,6 @@ return {
         },
       },
     })
+
   end
 }
