@@ -52,7 +52,8 @@ return {
         "cssls",
         "emmet_ls",
         "jsonls",
-      }
+      },
+      automatic_installation = false,
     })
 
     -- the default lsp configuration
@@ -125,6 +126,5 @@ return {
         },
       },
     })
-
   end
 }

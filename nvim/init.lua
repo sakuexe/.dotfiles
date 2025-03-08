@@ -11,7 +11,7 @@
 -- core settings
 require("sakuexe.options")
 require("sakuexe.keymaps")
-require("sakuexe.after.filetypes")
+require("sakuexe.autocommands")
 require("sakuexe.after.chooseformatter")
 -- plugins
 require("sakuexe.lazy_init")
