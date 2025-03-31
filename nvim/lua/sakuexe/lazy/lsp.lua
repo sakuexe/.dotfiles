@@ -97,13 +97,13 @@ return {
     }
 
     lspconfig.emmet_ls.setup {
-      filetypes = { "templ", "htmldjango", },
+      filetypes = { "html", "templ", "htmldjango", "jsx", "tsx" },
       capabilities = capabilities,
       on_attach = on_attach,
     }
 
     lspconfig.html.setup {
-      filetypes = { "htmldjango", "templ" },
+      filetypes = { "html", "htmldjango", "templ" },
       capabilities = capabilities,
       on_attach = on_attach,
     }
