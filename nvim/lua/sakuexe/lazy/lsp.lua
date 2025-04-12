@@ -52,6 +52,7 @@ return {
         "cssls",
         "emmet_ls",
         "jsonls",
+        "tailwindcss",
       },
       automatic_installation = false,
     })
@@ -65,6 +66,7 @@ return {
       "volar",
       "cssls",
       "jsonls",
+      "tailwindcss",
     }
     for _, lsp in ipairs(lsps) do
       lspconfig[lsp].setup({
