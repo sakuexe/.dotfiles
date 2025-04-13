@@ -47,3 +47,6 @@ vim.opt.splitbelow = true
 
 -- Nvim now counts - as part of a word
 vim.opt.iskeyword:append("-")
+
+-- show diagnostics inline
+vim.diagnostic.config({ virtual_text = true })
