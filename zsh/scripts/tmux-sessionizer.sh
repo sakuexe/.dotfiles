@@ -35,11 +35,23 @@ tmux-sessionizer () {
   # if the session with the selected name does NOT exist,
   # create a new session with the name WITHOUT attaching it
   if ! tmux-has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected_dir 
+    tmux new-session -ds $selected_name -c $selected_dir
+    tmux send-keys -t "$selected_name" 'activate_dev_flake' C-m
   fi
 
   # attach to the chosen session
   tmux switch-client -t $selected_name
+}
+
+activate_dev_flake() {
+  OS=$(grep '^NAME' /etc/os-release | sed 's/NAME=//')
+
+  if [ "$OS" = "NixOS" ] && [ -f "flake.nix" ]; then
+    nix develop git+file://$PWD\?ref=HEAD --command zsh -c "clear; exec zsh" \
+      || nix develop --command zsh -c "clear; exec zsh"
+  fi
+
+  clear
 }
 
 # ctrl-f keybind
