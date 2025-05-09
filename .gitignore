@@ -1,21 +1,3 @@
-# reverse logic .gitignore file
-# remove everything
-/*
-# add content
-!install.sh
-!.gitignore
-!README.md
-!terminalthemes.jsonc
-!nvim/
-!tmux/
-!zsh/
-!alacritty/
-!static/
-!omp/
-!conky/
-!fastfetch/
-!hypr/
-
 # remove unneeded zsh files
 zsh/.zsh_history
 zsh/.p10k.zsh
