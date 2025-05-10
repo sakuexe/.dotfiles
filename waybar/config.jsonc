@@ -7,9 +7,9 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "custom/arch",
-        "hyprland/window",
-        "hyprland/workspaces"
+        "custom/nixos",
+        "hyprland/workspaces",
+        "hyprland/window"
     ],
     "modules-center": [
         "clock"
@@ -17,10 +17,11 @@
     "modules-right": [
         "bluetooth",
         "pulseaudio",
-        "network",
+        // "network",
         "cpu",
         "memory",
         "temperature",
+        "custom/nvidia_temperature",
         "hyprland/language"
     ],
     //Modules configuration
