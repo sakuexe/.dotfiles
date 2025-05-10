@@ -1,32 +1,28 @@
 // -*- mode: jsonc -*-
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 32, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
-    "modules-left": [
-        "custom/nixos",
-        "hyprland/workspaces",
-        "hyprland/window"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "bluetooth",
-        "pulseaudio",
-        // "network",
-        "cpu",
-        "memory",
-        "temperature",
-        "custom/nvidia_temperature",
-        "hyprland/language"
-    ],
-    //Modules configuration
-
-    "include": [
-		"~/.config/waybar/modules.json"
-	]
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 32, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  "spacing": 4, // Gaps between modules (4px)
+  // Choose the order of the modules
+  "modules-left": [
+    "custom/nixos",
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    // "network",
+    "hyprland/language",
+    "group/audio",
+    "group/hardware-capacity",
+    "group/hardware-temperature"
+  ],
+  //Modules configuration
+  "include": [
+    "~/.config/waybar/modules.json"
+  ]
 }

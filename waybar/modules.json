@@ -4,6 +4,7 @@
     "tooltip": true,
     "tooltip-format": "Nixos btw"
   },
+
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -15,6 +16,41 @@
       "default": ""
     }
   },
+
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": [
+      "bluetooth",
+      "pulseaudio"
+    ]
+  },
+
+  "group/hardware-capacity": {
+    "orientation": "horizontal",
+    "modules": [
+      "memory",
+      "cpu"
+    ]
+  },
+
+  "group/hardware-temperature": {
+    "orientation": "horizontal",
+    "modules": [
+      "temperature",
+      "custom/nvidia_temperature"
+    ]
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "",
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{device_alias}",
+    "tooltip-format-connected": " {device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "blueman-manager"
+  },
+
   "pulseaudio": {
     "format": "{icon}  {volume}%",
     "format-bluetooth": "{icon} {volume}%  {format_source}",
@@ -37,6 +73,7 @@
     },
     "on-click": "pavucontrol"
   },
+
   "network": {
     "format-wifi": "   {essid} ({signalStrength}%)",
     "format-ethernet": "󰈀 {ipaddr}/{cidr}",
@@ -45,14 +82,17 @@
     "format-disconnected": "Disconnected ⚠",
     "on-click": "sh ~/scripts/rofi-wifi-menu/rofi-wifi-menu.sh"
   },
+
   "cpu": {
     "format": " {usage}%",
     "tooltip": true
   },
+
   "memory": {
     "format": "  {}%",
     "tooltip": true
   },
+
   "temperature": {
     "interval": 10,
     "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
@@ -68,6 +108,7 @@
       ""
     ]
   },
+
   "custom/nvidia_temperature": {
     "interval": 10,
     "exec": "~/.config/waybar/scripts/nvidia_temp.sh",
@@ -75,10 +116,14 @@
     "format": "{}",
     "on-click": "nvidia-smi"
   },
+
   "hyprland/language": {
     "format": "  {}",
-    "format-en": "EN"
+    "format-en": "EN",
+    "format-fi": "FI",
+    "on-click": "hyprctl switchxkblayout main next"
   },
+
   "battery": {
     "states": {
       "warning": 30,
@@ -97,21 +142,10 @@
       ""
     ]
   },
-  "battery#bat2": {
-    "bat": "BAT2"
-  },
+
   "clock": {
-    "format": "{:%H:%M | %e %B} ",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%H:%M | %e.%m}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt>\n<small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}"
-  },
-  "bluetooth": {
-    "format": " {status}",
-    "format-disabled": "",
-    "format-connected": " {num_connections}",
-    "tooltip-format": "{device_alias}",
-    "tooltip-format-connected": " {device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}",
-    "on-click": "blueman-manager"
   }
 }
