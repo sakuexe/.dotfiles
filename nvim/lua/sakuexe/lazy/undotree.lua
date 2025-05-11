@@ -6,7 +6,7 @@ return {
       -- backup files / persistent undo tree
       vim.opt.swapfile = false
       vim.opt.backup = false
-      vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+      vim.opt.undodir = os.getenv("XDG_DATA_HOME") .. "/vim/undodir"
       vim.opt.undofile = true
     end
 }

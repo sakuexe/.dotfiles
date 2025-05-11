@@ -1,10 +1,20 @@
-# dotfiles folder
+# XDG base directories specification
+# https://wiki.archlinux.org/title/XDG_Base_Directory
 export XDG_CONFIG_HOME="$HOME/.config"
-# find the .zshrc file
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+# zsh related files
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZPLUGINDIR="$ZDOTDIR/plugins"
+
 # enable use of colors (and neovim) for man pages
 export MANPAGER='nvim +Man!'
+
+# programming related
+export GOPATH="$XDG_DATA_HOME/go"
+export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 
 # WSL
 
