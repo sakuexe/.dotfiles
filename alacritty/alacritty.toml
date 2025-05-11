@@ -5,9 +5,9 @@ size = 14
 [window]
 # full or none
 decorations = "full"
-dynamic_title = true
 opacity = 0.90
-title = "terminal"
+# title = "terminal"
+dynamic_title = true
 
 [cursor.style]
 shape = "Block"
