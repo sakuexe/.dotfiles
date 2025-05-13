@@ -2,7 +2,8 @@
   "custom/nixos": {
     "format": "",
     "tooltip": true,
-    "tooltip-format": "Nixos btw"
+    "tooltip-format": "Nixos btw",
+    "on-click": "xdg-open 'https://search.nixos.org/packages' 2>/dev/null"
   },
 
   "hyprland/workspaces": {
