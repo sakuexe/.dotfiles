@@ -147,6 +147,7 @@
   "clock": {
     "format": "{:%H:%M | %e.%m.}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt>\n<small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
+    "format-alt": "{:%Y-%m-%d %H-%M}",
+    "timezone-alt": "utc"
   }
 }
