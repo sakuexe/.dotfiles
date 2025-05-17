@@ -64,4 +64,4 @@ alias djshell="python3 manage.py shell"
 alias fm="yazi || echo 'yazi not installed'"
 
 # Use fzf to search for available man pages
-alias fman="compgen -c | fzf | xargs man"
+alias fman="man -k . | fzf --preview='echo {} | awk \"{ print \$1 }\" | xargs man' | awk '{ print \$1 }' | xargs man"
