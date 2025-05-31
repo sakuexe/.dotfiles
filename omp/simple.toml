@@ -62,7 +62,7 @@ final_space = true
       threshold = 500
 
   [[blocks.segments]]
-    template = '(nix-shell-{{ .Type }})'
+    template = '{{ if not (eq .Type "unknown") }}(nix shell){{ end }}'
     foreground = 'blue'
     background = 'transparent'
     type = 'nix-shell'
