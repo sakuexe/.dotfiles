@@ -50,7 +50,7 @@ alias ....="cd ../../.."
 mkcdir() { mkdir -p "$1" && cd "$1" }
 
 # open a port to the internet (tcp)
-openport() { sudo firewall-cmd --add-port=$1/tcp }
+# openport() { sudo firewall-cmd --add-port=$1/tcp }
 
 # Django development
 alias dj="python3 manage.py"
