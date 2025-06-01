@@ -6,7 +6,7 @@
   },
   {
     "label": "Logout",
-    "exec": "swaymsg exit",
+    "exec": "hyprctl dispatch exit",
     "icon": "/nix/store/67m9p4wbam0n25qw9haqfmkn04vb5qg7-nwg-bar-0.1.6/share/nwg-bar/images/system-log-out.svg"
   },
   {
