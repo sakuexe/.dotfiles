@@ -9,12 +9,11 @@ window {
 
 /* Inner bar container, surrounds buttons */
 #inner-box {
-  border-radius: 10px;
-  border-style: none;
-  border-width: 1px;
-  border-color: rgba(156, 142, 122, 0.7);
   padding: 5px;
-  margin: 5px
+  margin: 5px;
+  background-color: rgba(24, 21, 25, 0.7);
+  border-radius: 10px;
+  /* border: 2px solid rgba(156, 142, 122, 0.7); */
 }
 
 button,
