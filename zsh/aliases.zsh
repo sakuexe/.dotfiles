@@ -58,8 +58,8 @@ alias djrun="python3 manage.py runserver"
 alias djmig="python3 manage.py makemigrations && python3 manage.py migrate"
 alias djshell="python3 manage.py shell"
 
-# filemanager
-alias fm="yazi || echo 'yazi not installed'"
-
 # Use fzf to search for available man pages
 alias fman="man -k . | fzf --preview='echo {} | awk \"{ print \$1 }\" | xargs man' | awk '{ print \$1 }' | xargs man"
+
+# get the link to today's fingerpori (thank you kaleva.fi!)
+alias fingerpori="curl -s -X GET https://www.kaleva.fi/sarjakuvat/fingerpori | grep -A 3 \"cartoon-strip__image\" | grep -oP '(?<=<img src=\")[^\"?]*'"
