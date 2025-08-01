@@ -8,36 +8,12 @@ else
   export EDITOR='nvim'
 fi
 
-# Load plugins
-source "$ZDOTDIR/plugins.zsh"
-
 # Load aliases
 source "$ZDOTDIR/aliases.zsh"
-
 # Load zsh hotkeys
 source "$ZDOTDIR/hotkeys.zsh"
-
-# Set scripts to be executable
-script_folder="$ZDOTDIR/scripts"
-setopt nullglob  # Enable the nullglob option
-
-# Check for .zsh files and source them
-zsh_scripts=($script_folder/*.zsh)
-if [ ${#zsh_scripts[@]} -gt 0 ]; then
-    for zsh_script in $zsh_scripts; do
-        source "$zsh_script"
-    done
-fi
-
-# Check for .sh files and source them
-sh_scripts=($script_folder/*.sh)
-if [ ${#sh_scripts[@]} -gt 0 ]; then
-    for sh_script in $sh_scripts; do
-        source "$sh_script"
-    done
-fi
-
-unsetopt nullglob  # Disable the nullglob option after use
+# Load plugins
+source "$ZDOTDIR/plugins.zsh"
 
 # Fixes the issue where password-store's completion doesn't work
 autoload -Uz compinit && compinit

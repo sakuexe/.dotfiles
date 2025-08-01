@@ -1,5 +1,6 @@
 # enable emacs mode
 bindkey -e
+
 # include some of the niceties of vi mode
 # without actually using vi mode
 # see all the hotkeys with bindkey -L

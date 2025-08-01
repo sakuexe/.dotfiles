@@ -1,10 +1,12 @@
 # Other single file plugins
+setopt nullglob
 plugins=($ZPLUGINDIR/*.zsh)
 if [ ${#plugins[@]} -gt 0 ]; then
     for plugin in $plugins; do
         source "$plugin"
     done
 fi
+unsetopt nullglob
 
 OS=$(grep '^NAME' /etc/os-release | sed 's/NAME=//')
 
