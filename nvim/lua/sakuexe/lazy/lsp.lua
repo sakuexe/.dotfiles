@@ -67,6 +67,7 @@ return {
       "cssls",
       "jsonls",
       "tailwindcss",
+      "jedi_language_server",
     }
     for _, lsp in ipairs(lsps) do
       lspconfig[lsp].setup({

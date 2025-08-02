@@ -1,0 +1,29 @@
+.notifications {
+  min-height: 0px;
+  background-color: transparent;
+}
+
+.notif {
+  background-color: #282828;
+  // margin-bottom: 10px;
+  // padding: 10px;
+  border-radius: 8px;
+  border-width: 2;
+  border-color: #6a418c;
+  // margin-top: 10px;
+  // margin-bottom: 10px;
+  padding: 4px;
+}
+
+.notif > box > box {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.notif label.heading {
+  font-weight: bold;
+}
+
+.notif image {
+  padding-right: 10px;
+}
