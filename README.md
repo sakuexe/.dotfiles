@@ -4,7 +4,7 @@ This repository includes all the configuration files that I use, as well as
 guides for installing them. Recommendations and helpful suggestions are
 always appreciated! :)
 
-![Terminal with my development environment](./static/dotfiles_preview_2024.png) 
+![Terminal with my development environment](./static/dotfiles_preview_2025.png) 
 
 Helpful tips and tricks are combined by me in the Wiki of this repository.
 [Useful commands - .dotfiles Wiki](https://github.com/sakuexe/.dotfiles/wiki/Useful-commands)

@@ -13,7 +13,7 @@ function region() {
   grim -g \
     "$(slurp -b $BACKGROUND_COLOR -c $BORDER_COLOR -s $SELECTION_COLOR -w 2)" - \
     | satty --filename - \
-    --output-filename ~/Pictures/Screenshots/screenshot-$(date '+%Y%m%d-%H:%M:%S').png \
+    --output-filename ~/Pictures/Screenshots/screenshot-$(date '+%Y%m%d_%H%M%S').png \
     --early-exit \
     --initial-tool brush \
     --disable-notifications \
@@ -25,7 +25,7 @@ function fullscreen() {
   grim -o "$(hyprctl monitors | awk '/Monitor/{mon=$2} /focused: yes/{print mon}')" - \
     | satty --filename - \
     --fullscreen \
-    --output-filename ~/Pictures/Screenshots/screenshot-$(date '+%Y%m%d-%H:%M:%S').png \
+    --output-filename ~/Pictures/Screenshots/screenshot-$(date '+%Y%m%d_%H%M%S').png \
     --early-exit \
     --initial-tool brush \
     --disable-notifications \
