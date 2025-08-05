@@ -11,4 +11,4 @@ end
 local opts = { buffer = true, }
 local formattingLsp = "html"
 
-vim.keymap.set("n", "<C-F>", generateFilteredFormat(formattingLsp), opts)
+vim.keymap.set("n", "<M-f>", generateFilteredFormat(formattingLsp), opts)

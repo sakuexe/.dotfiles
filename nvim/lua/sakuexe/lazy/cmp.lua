@@ -25,48 +25,45 @@ return {
 
       cmp.setup({
         snippet = {
-          cmp.setup({
-            snippet = {
-              expand = function(args)
-                require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-              end,
-            },
+          expand = function(args)
+            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+          end,
+        },
 
-            -- keymaps
-            mapping = cmp.mapping.preset.insert({
-              ['<C-u>'] = cmp.mapping.select_prev_item(cmp_select),
-              ['<C-d>'] = cmp.mapping.select_next_item(cmp_select),
-              -- ['<Tab>'] = cmp.mapping.select_prev_item(cmp_select),
-              -- ['<S-Tab>'] = cmp.mapping.select_next_item(cmp_select),
-              ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-              ["<C-f>"] = cmp.mapping.scroll_docs(4),
-              ['<CR>'] = cmp.mapping.confirm({ select = true }),
-              ["<C-Space>"] = cmp.mapping.complete(), -- show completion window
-              ["<C-e>"] = cmp.mapping.abort(),        -- hide completion window
-            }),
+        -- keymaps
+        mapping = cmp.mapping.preset.insert({
+          ['<C-u>'] = cmp.mapping.select_prev_item(cmp_select),
+          ['<C-d>'] = cmp.mapping.select_next_item(cmp_select),
+          -- ['<Tab>'] = cmp.mapping.select_prev_item(cmp_select),
+          -- ['<S-Tab>'] = cmp.mapping.select_next_item(cmp_select),
+          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+          ["<C-f>"] = cmp.mapping.scroll_docs(4),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }),
+          ["<C-Space>"] = cmp.mapping.complete(), -- show completion window
+          ["<C-e>"] = cmp.mapping.abort(),        -- hide completion window
+        }),
 
-            -- sources for cmp
-            sources = cmp.config.sources({
-              -- LSP
-              { name = 'nvim_lsp' },
-              -- Snippets
-              { name = 'luasnip' },
-              -- words in buffer
-              { name = 'buffer', keyword_length = 4 },
-              -- paths
-              { name = 'path' },
-            }),
+        -- sources for cmp
+        sources = cmp.config.sources({
+          -- LSP
+          { name = 'nvim_lsp' },
+          -- Snippets
+          { name = 'luasnip' },
+          -- words in buffer
+          { name = 'buffer',  keyword_length = 4 },
+          -- paths
+          { name = 'path' },
+          -- ai completion
+          -- { name = "supermaven" },
+        }),
 
-            -- styling
-            window = {
-              completion = cmp.config.window.bordered(window_style),
-              documentation = cmp.config.window.bordered(window_style),
-            },
-            view = {
-              entries = { name = "custom", selection_order = "near_cursor" },
-            },
-
-          })
+        -- styling
+        window = {
+          completion = cmp.config.window.bordered(window_style),
+          documentation = cmp.config.window.bordered(window_style),
+        },
+        view = {
+          entries = { name = "custom", selection_order = "near_cursor" },
         },
 
         -- format of information getting shown in cmp
@@ -79,7 +76,9 @@ return {
               luasnip = "[LuaSnip]",
               path = "[Path]",
             })
-          })
+          }),
+          expandable_indicator = true,
+          fields = { "abbr", "kind", "menu" },
         }
       })
     end
