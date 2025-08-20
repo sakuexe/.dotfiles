@@ -78,6 +78,7 @@ return {
       "jsonls",
       "tailwindcss",
       "jedi_language_server",
+      "astro",
     }
     for _, lsp in ipairs(lsps) do
       lspconfig[lsp].setup({
@@ -110,7 +111,7 @@ return {
     }
 
     lspconfig.emmet_ls.setup {
-      filetypes = { "html", "templ", "htmldjango", "jsx", "tsx" },
+      filetypes = { "html", "templ", "htmldjango", "jsx", "tsx", "astro" },
       capabilities = capabilities,
       on_attach = on_attach,
     }
