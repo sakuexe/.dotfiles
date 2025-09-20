@@ -11,7 +11,7 @@ BORDER_COLOR="E06B74ff"
 
 function region() {
   grim -g \
-    "$(slurp -b $BACKGROUND_COLOR -c $BORDER_COLOR -s $SELECTION_COLOR -w 2)" - \
+    "$(slurp -b $BACKGROUND_COLOR -c $BORDER_COLOR -s $SELECTION_COLOR -w 0)" - \
     | satty --filename - \
     --output-filename ~/Pictures/Screenshots/screenshot-$(date '+%Y%m%d_%H%M%S').png \
     --early-exit \
