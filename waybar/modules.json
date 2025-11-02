@@ -49,7 +49,7 @@
     "tooltip-format": "{device_alias}",
     "tooltip-format-connected": " {device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
-    "on-click": "blueman-manager"
+    "on-click": "~/.config/waybar/scripts/toggle.sh blueman-manager blueman"
   },
 
   "pulseaudio": {
@@ -72,7 +72,7 @@
         ""
       ]
     },
-    "on-click": "pavucontrol"
+    "on-click": "~/.config/waybar/scripts/toggle.sh pavucontrol"
   },
 
   "network": {
