@@ -44,9 +44,9 @@ autoload -Uz +X compinit && compinit
 autoload -Uz +X bashcompinit && bashcompinit
 
 # use oh-my-posh
-if ! command -v oh-my-posh &> /dev/null && [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
-  export PATH="$PATH:$HOME/.local/bin"
-fi
+# if ! command -v oh-my-posh &> /dev/null && [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+#   export PATH="$PATH:$HOME/.local/bin"
+# fi
 OMP_THEME="simple.toml"
 eval "$(oh-my-posh init zsh --config $XDG_CONFIG_HOME/omp/$OMP_THEME)"
 
