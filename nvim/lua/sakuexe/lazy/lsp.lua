@@ -47,13 +47,6 @@ return {
                 })
         end
 
-        local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
-        if not lspconfig_ok then
-            -- set an error message
-            print "Lspconfig could not be required (lsp.lua)"
-            return
-        end
-
         -- mason - for installing lsp's more easily
         require("mason").setup()
         require("mason-lspconfig").setup({
@@ -82,13 +75,13 @@ return {
             "svelte",
         }
         for _, lsp in ipairs(lsps) do
-            lspconfig[lsp].setup({
+            vim.lsp.config(lsp, {
                 capabilities = capabilities,
                 on_attach = on_attach
             })
         end
 
-        lspconfig.ts_ls.setup {
+        vim.lsp.config("ts_ls", {
             settings = {
                 implicitProjectConfiguration = {
                     checkJs = true
@@ -109,22 +102,25 @@ return {
                 "typescript",
                 "vue",
             },
-        }
+        })
+        vim.lsp.enable("ts_ls")
 
-        lspconfig.emmet_ls.setup {
+        vim.lsp.config("emmet_ls", {
             filetypes = { "html", "templ", "htmldjango", "jsx", "tsx", "astro", "svelte" },
             capabilities = capabilities,
             on_attach = on_attach,
-        }
+        })
+        vim.lsp.enable("emmet_ls")
 
-        lspconfig.html.setup {
+        vim.lsp.config("html", {
             filetypes = { "html", "htmldjango", "templ" },
             capabilities = capabilities,
             on_attach = on_attach,
-        }
+        })
+        vim.lsp.enable("html")
 
         -- nix language server
-        lspconfig.nixd.setup({
+        vim.lsp.config("nixd", {
             capabilities = capabilities,
             on_attach = on_attach,
             cmd = { "nixd" },
@@ -149,5 +145,6 @@ return {
                 },
             },
         })
+        vim.lsp.enable("nixd")
     end
 }
