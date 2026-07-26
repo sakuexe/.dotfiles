@@ -11,7 +11,7 @@ hyprctl clients -j | jq -e "map(select(.class | match(\"$CLASS\"))) | length > 0
 
 if [[ $? -ne 0 ]]; then
   # hyprctl notify -1 2000 "rgb(ff1ea3)" "Opening $CLASS"
-  hyprctl dispatch exec $CLASS
+  hyprctl dispatch "hl.dsp.exec_cmd(\"$CLASS\")"
   exit 0
 fi
 

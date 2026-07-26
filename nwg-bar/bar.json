@@ -6,7 +6,7 @@
   },
   {
     "label": "Logout",
-    "exec": "hyprctl dispatch exit",
+    "exec": "hyprctl dispatch hl.dsp.exec_cmd(\"exit\")",
     "icon": "/home/sakuk/Nixos/dotfiles/nwg-bar/images/system-log-out.svg"
   },
   {

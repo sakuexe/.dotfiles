@@ -365,11 +365,11 @@ hl.window_rule({
   float = true, size = "500 800", center = true,
 })
 hl.window_rule({
-  match = { class = "^\\.blueman.*" },
-  float = true, size = "600 400", move = { "monitor_w-window_w-11", "monitor_h*0.03" },
+  match = { class = "^blueman-manager$" },
+  float = true, size = "600 400", move = { "monitor_w-window_w-8", "monitor_h*0.03" },
 })
 hl.window_rule({
   match = { class = "^org\\.pulseaudio\\.pavucontrol$" },
-  float = true, size = "800 500", move = { "monitor_w-window_w-11", "monitor_h*0.03" },
+  float = true, size = "600 400", move = { "monitor_w-window_w-8", "monitor_h*0.03" },
 })
 hl.window_rule({ match = { class = "^eog$" }, float = true })
