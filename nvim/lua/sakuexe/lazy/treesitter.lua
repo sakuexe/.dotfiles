@@ -48,7 +48,8 @@ return {
                     "css",
                     "json",
                     "svelte",
-                    "cs",
+                    -- "cs" intentionally excluded: nvim-treesitter's indentexpr
+                    -- is unreliable for c_sharp and moves the cursor to col 0
                     "nix",
                     "dockerfile",
                     "yaml",

@@ -80,6 +80,7 @@ return {
                 on_attach = on_attach
             })
         end
+        vim.lsp.enable(lsps)
 
         vim.lsp.config("ts_ls", {
             settings = {
