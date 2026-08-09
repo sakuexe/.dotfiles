@@ -5,12 +5,11 @@ set -e # exit on error
 RED="\e[31m"
 GREEN="\e[32m"
 CLEAR="\e[0m"
+VIOLET="\033[38;5;183m"
 
 # gitpub - git publish
 # adds all changes, commits them with a message, and pushes to remote
 COMMIT_MSG=$1
-DEFAULT_REMOTE=`git remote | head -n 1`
-DEFAULT_BRANCH=`git branch --show-current`
 
 # get the root path to current git project
 GIT_ROOT=$(git rev-parse --show-toplevel)
@@ -29,23 +28,35 @@ else
   git commit
 fi
 
-REMOTES=`git remote | tr -d '\n'`
-echo -n "Give remote. (* $REMOTES): "
-read REMOTE
-# if REMOTE is empty, set it to origin (the default)
-if [ -z "$REMOTE" ]
-then
-  REMOTE=$DEFAULT_REMOTE
-fi
+REMOTES=$(git remote)
+REMOTE_COUNT=$(echo "$REMOTES" | grep -c .)
+DEFAULT_REMOTE=$(git remote | head -n 1)
 
-BRANCHES=`git branch | tr -d '\n'`
-echo -n "Give branch. ($BRANCHES): "
-read BRANCH
-# if BRANCH is empty, set it to master (the default)
-if [ -z "$BRANCH" ]
-then
-  BRANCH=$DEFAULT_BRANCH
+if [ "$REMOTE_COUNT" -le 1 ]; then
+  REMOTE=$DEFAULT_REMOTE
+else
+  REMOTE=$(echo "$REMOTES" | sed "s/^${DEFAULT_REMOTE}\$/${DEFAULT_REMOTE} (current)/" \
+    | fzf --prompt="Remote> " --height=~40% --layout=reverse --border \
+          --header="Default: ${DEFAULT_REMOTE}" --query="$DEFAULT_REMOTE" --select-1 --exit-0)
+  REMOTE=$(echo "$REMOTE" | sed 's/ (current)$//')
+  REMOTE=${REMOTE:-$DEFAULT_REMOTE}
 fi
+printf "Using remote: ${VIOLET}%s${CLEAR}\n" "$REMOTE"
+
+BRANCHES=$(git branch --format='%(refname:short)')
+BRANCH_COUNT=$(echo "$BRANCHES" | grep -c .)
+DEFAULT_BRANCH=$(git branch --show-current)
+
+if [ "$BRANCH_COUNT" -le 1 ]; then
+  BRANCH=$DEFAULT_BRANCH
+else
+  BRANCH=$(echo "$BRANCHES" | sed "s/^${DEFAULT_BRANCH}\$/${DEFAULT_BRANCH} (current)/" \
+    | fzf --prompt="Branch> " --height=~40% --layout=reverse --border \
+          --header="Default: ${DEFAULT_BRANCH}" --query="$DEFAULT_BRANCH") || true
+  BRANCH=$(echo "$BRANCH" | sed 's/ (current)$//')
+  BRANCH=${BRANCH:-$DEFAULT_BRANCH}
+fi
+printf "Using branch: ${VIOLET}%s${CLEAR}\n" "$BRANCH"
 
 # push to remote
 git push $REMOTE $BRANCH
