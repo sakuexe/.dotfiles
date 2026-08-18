@@ -48,8 +48,7 @@ return {
                     "css",
                     "json",
                     "svelte",
-                    -- "cs" intentionally excluded: nvim-treesitter's indentexpr
-                    -- is unreliable for c_sharp and moves the cursor to col 0
+                    "cs",
                     "nix",
                     "dockerfile",
                     "yaml",
@@ -58,8 +57,10 @@ return {
                 callback = function()
                     vim.treesitter.start()
 
-                    -- New nvim-treesitter indentation API
-                    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                    if vim.bo.filetype ~= "cs" then
+                        -- New nvim-treesitter indentation API
+                        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                    end
                 end,
             })
 
