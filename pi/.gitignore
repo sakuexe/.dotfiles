@@ -1,0 +1,14 @@
+# secrets
+auth.json
+models.json
+models-store.json
+
+# regenerated / installed
+npm/
+
+# local state, not shareable config
+sessions/
+trust.json
+pi-debug.log
+*.log
+logs/
