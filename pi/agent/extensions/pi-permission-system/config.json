@@ -23,6 +23,7 @@
       "~/.pi/agent/extensions/**": "allow"
     },
     "fetch_content": "allow",
+    "web_search": "allow",
 
     "bash": {
       "*": "ask",
