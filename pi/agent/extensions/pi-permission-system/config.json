@@ -1,40 +1,31 @@
 {
+  "$schema": "https://raw.githubusercontent.com/gotgenes/pi-packages/main/packages/pi-permission-system/schemas/permissions.schema.json",
   "permission": {
-    "*": "allow",
     "path": {
       "*": "allow",
       "**/.env": "deny",
       "**/.env.*": "deny",
-      "**/*.env": "deny",
-      "**/*.env.*": "deny",
       ".git/*": "deny",
-      "*/.git/*": "deny",
       "**/.git/**": "deny"
     },
     "bash": {
-      "*": "allow",
-      "git reset --hard": "deny",
+      "*": "ask",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git log *": "allow",
       "git reset --hard *": "deny",
       "git clean *": "deny",
-      "git checkout -- *": "deny",
-      "git restore *": "deny",
-      "git branch -D *": "deny",
       "git push --force *": "deny",
       "git push -f *": "deny",
       "git push * --force": "deny",
       "git push * -f": "deny",
+      "git branch -D *": "deny",
       "rm -rf *": "deny",
-      "rm -Rf *": "deny",
-      "rm -r *": "deny",
       "sudo *": "ask",
-      "chmod -R *": "ask",
-      "chown -R *": "ask",
-      "kill *": "ask",
-      "pkill *": "ask",
-      "xkill *": "ask",
+      "dotnet build *": "allow",
+      "dotnet restore *": "allow",
       "shutdown *": "deny",
       "reboot *": "deny"
-    },
-    "external_directory": "ask"
+    }
   }
 }
