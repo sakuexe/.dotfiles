@@ -8,8 +8,17 @@
     "reserveTokens": 32768,
     "keepRecentTokens": 20000
   },
+  "defaultTools": [
+    "read",
+    "bash",
+    "edit",
+    "write",
+    "grep",
+    "find",
+    "ls"
+  ],
   "packages": [
-    "npm:pi-privacy",
-    "npm:@gotgenes/pi-permission-system"
+    "npm:@gotgenes/pi-permission-system",
+    "npm:pi-web-access"
   ]
 }

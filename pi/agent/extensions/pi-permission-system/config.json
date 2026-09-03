@@ -5,11 +5,32 @@
       "*": "allow",
       "**/.env": "deny",
       "**/.env.*": "deny",
+      "**/.env.example": "allow",
       ".git/*": "deny",
       "**/.git/**": "deny"
     },
+
+    "read": "allow",
+    "write": "allow",
+    "edit": "allow",
+    "grep": "allow",
+    "find": "allow",
+    "ls": "allow",
+    "external_directory": {
+      "*": "ask",
+      "~/.pi/agent": "allow",
+      "~/.pi/agent/settings.json": "allow",
+      "~/.pi/agent/extensions/**": "allow"
+    },
+    "fetch_content": "allow",
+
     "bash": {
       "*": "ask",
+      "cd *": "allow",
+      "find *": "allow",
+      "find * -exec*": "deny",
+      "find * -ok*": "deny",
+
       "git status *": "allow",
       "git diff *": "allow",
       "git log *": "allow",
@@ -20,12 +41,16 @@
       "git push * --force": "deny",
       "git push * -f": "deny",
       "git branch -D *": "deny",
+
       "rm -rf *": "deny",
       "sudo *": "ask",
+      "shutdown *": "deny",
+      "reboot *": "deny",
+
       "dotnet build *": "allow",
       "dotnet restore *": "allow",
-      "shutdown *": "deny",
-      "reboot *": "deny"
+      "dotnet clean *": "allow",
+      "dotnet test *": "allow"
     }
   }
 }
