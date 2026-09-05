@@ -1,6 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/gotgenes/pi-packages/main/packages/pi-permission-system/schemas/permissions.schema.json",
   "permission": {
+    "*": "allow",
+
     "path": {
       "*": "allow",
       "**/.env": "deny",
@@ -10,48 +12,25 @@
       "**/.git/**": "deny"
     },
 
-    "read": "allow",
-    "write": "allow",
-    "edit": "allow",
-    "grep": "allow",
-    "find": "allow",
-    "ls": "allow",
     "external_directory": {
       "*": "ask",
       "~/.pi/agent": "allow",
       "~/.pi/agent/settings.json": "allow",
-      "~/.pi/agent/extensions/**": "allow"
+      "~/.pi/agent/extensions/**": "allow",
+      "/tmp/**": "allow",
+      "/nix/store/*-pi-coding-agent-*/**": "allow",
+
+      "~/.microsoft/usersecrets/**": "deny"
     },
+
     "fetch_content": "allow",
     "web_search": "allow",
 
     "bash": {
-      "*": "ask",
-      "cd *": "allow",
-      "find *": "allow",
-      "find * -exec*": "deny",
-      "find * -ok*": "deny",
-
-      "git status *": "allow",
-      "git diff *": "allow",
-      "git log *": "allow",
-      "git reset --hard *": "deny",
-      "git clean *": "deny",
-      "git push --force *": "deny",
-      "git push -f *": "deny",
-      "git push * --force": "deny",
-      "git push * -f": "deny",
-      "git branch -D *": "deny",
-
+      "*": "allow",
       "rm -rf *": "deny",
-      "sudo *": "ask",
-      "shutdown *": "deny",
-      "reboot *": "deny",
-
-      "dotnet build *": "allow",
-      "dotnet restore *": "allow",
-      "dotnet clean *": "allow",
-      "dotnet test *": "allow"
+      "sudo *": "deny",
+      "git push --force *": "deny"
     }
   }
 }

@@ -19,6 +19,7 @@
   ],
   "packages": [
     "npm:@gotgenes/pi-permission-system",
-    "npm:pi-web-access"
+    "npm:pi-web-access",
+    "npm:@czottmann/pi-automode"
   ]
 }
