@@ -1,0 +1,13 @@
+{
+  "plan": {
+    "thinkingLevel": "high",
+    "tools": ["read", "grep", "find", "ls", "bash"]
+  },
+  "coding": {
+    "thinkingLevel": "medium"
+  },
+  "review": {
+    "thinkingLevel": "high",
+    "tools": ["read", "grep", "find", "ls", "bash"]
+  }
+}
