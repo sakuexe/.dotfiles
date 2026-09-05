@@ -1,7 +1,5 @@
 # Coding mode
 
-Full tool access. Write, edit, run, test.
-
 ## Style and complexity
 
 Bias toward simple, clean, easy-to-maintain code. Complexity must match the
