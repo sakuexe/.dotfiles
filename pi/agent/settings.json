@@ -1,13 +1,21 @@
 {
   "lastChangelogVersion": "0.84.3",
   "theme": "dark",
+
   "defaultProvider": "github-copilot",
-  "defaultModel": "gpt-5.6-terra",
+  "defaultModel": "gpt-5.6-luna",
+  "modelThinkingLevels": {
+     "github-copilot/gpt-5.6-luna": "xhigh",
+     "github-copilot/gpt-5.6-terra": "medium",
+     "github-copilot/gpt-5.6-sol": "low"
+   },
+
   "compaction": {
     "enabled": true,
     "reserveTokens": 32768,
     "keepRecentTokens": 20000
   },
+
   "defaultTools": [
     "read",
     "bash",
@@ -17,10 +25,20 @@
     "find",
     "ls"
   ],
+
   "packages": [
     "npm:@gotgenes/pi-permission-system",
     "npm:pi-web-access",
     "npm:@czottmann/pi-automode",
     "npm:@juicesharp/rpiv-ask-user-question"
+  ],
+
+  "enabledModels": [
+    "github-copilot/gpt-5.6-luna",
+    "github-copilot/gpt-5.6-sol",
+    "github-copilot/gpt-5.6-terra",
+    "github-copilot/gemini-3.8-flash",
+    "github-copilot/claude-sonnet-5",
+    "github-copilot/claude-opus-5"
   ]
 }
