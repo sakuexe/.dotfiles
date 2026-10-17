@@ -22,6 +22,10 @@
 
       "~/.microsoft/usersecrets/**": "deny"
     },
+    "external_directory_read": { 
+      "/nix/**": "allow",
+      "/var/tmp/**": "allow"
+    },
 
     "fetch_content": "allow",
     "web_search": "allow",
