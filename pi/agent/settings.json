@@ -1,11 +1,11 @@
 {
-  "lastChangelogVersion": "0.87.1",
+  "lastChangelogVersion": "1.2.0",
   "theme": "dark",
   "defaultProvider": "github-copilot",
-  "defaultModel": "gpt-6-sol",
+  "defaultModel": "gpt-6.1-sol",
   "modelThinkingLevels": {
     "github-copilot/gpt-6-luna": "xhigh",
-    "github-copilot/gpt-6-sol": "high"
+    "github-copilot/gpt-6.1-sol": "high"
   },
   "compaction": {
     "enabled": true,
@@ -29,7 +29,7 @@
   ],
   "enabledModels": [
     "github-copilot/gpt-6-luna",
-    "github-copilot/gpt-6-sol",
+    "github-copilot/gpt-6.1-sol",
     "github-copilot/gemini-3.8-flash",
     "github-copilot/gemini-4-argon",
     "github-copilot/claude-sonnet-5.5",
