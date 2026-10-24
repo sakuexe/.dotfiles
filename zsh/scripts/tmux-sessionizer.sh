@@ -8,31 +8,43 @@ set -e
 # check if fzf is installed
 if ! command -v fzf &> /dev/null; then
   echo "fzf is not installed"
-  return
+  exit 0
 fi
 
 # get all the dirs inside the specified dirs
-# also suppress the error messages (so it doesn't matter if all the folders are present)
-all_dirs=$(find ~/Code ~/Nixos -maxdepth 1 -type d 2>/dev/null)
+# missing folders are reported in the fzf header, but do not stop the script
+search_dirs=(~/Code ~/Nixos)
+existing_dirs=()
+warnings=""
+for dir in "${search_dirs[@]}"; do
+  if [[ -d $dir ]]; then
+    existing_dirs+=("$dir")
+  else
+    warnings+="not found: $dir"$'\n'
+  fi
+done
 
-if [[ -z $all_dirs ]]; then
-  echo "No specified directories (~/Code, ~/Nixos) were found"
-  return
+if [[ ${#existing_dirs[@]} -eq 0 ]]; then
+  echo "None of the specified directories (~/Code, ~/Nixos) were found"
+  read -n 1 -s -r -p "press any key to close"
+  exit 0
 fi
 
-selected_dir=$(printf '%s\n' "$all_dirs" | fzf --preview "ls -laFh {}")
+all_dirs=$(find "${existing_dirs[@]}" -maxdepth 1 -type d)
+
+selected_dir=$(printf '%s\n' "$all_dirs" | fzf --preview "ls -laFh {}" ${warnings:+--header "$warnings"})
 selected_name=$(basename $selected_dir)
 tmux_running=$(pgrep tmux)
 
 # early exit if nothing is selected
 if [[ -z $selected_dir ]]; then
-  return
+  exit 0
 fi
 
 # if tmux is not already running, create a new session and attach it
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
   tmux new-session -s $selected_name -c $selected_dir 
-  return
+  exit 0
 fi
 
 # if the session with the selected name does NOT exist,

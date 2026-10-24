@@ -10,3 +10,8 @@ bindkey "^[[3~" delete-char # delete button
 bindkey "^[[4~" end-of-line # end button
 bindkey "^[[5~" history-beginning-search-backward-end
 bindkey "^[[6~" history-beginning-search-forward-end
+
+# edit the current command line in $VISUAL / $EDITOR with ctrl+g
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey "^g" edit-command-line
