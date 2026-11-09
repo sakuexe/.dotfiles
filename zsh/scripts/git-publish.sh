@@ -15,7 +15,7 @@ COMMIT_MSG=$1
 GIT_ROOT=$(git rev-parse --show-toplevel)
 
 # initial refresh and removing all cached files
-git --git-dir="$GIT_ROOT" rm -r --cached "$GIT_ROOT" > /dev/null 2>&1 || true
+git -C "$GIT_ROOT" rm -r --cached --quiet . > /dev/null 2>&1 || true
 
 # add all changes to the next commit
 git add -A
@@ -35,7 +35,7 @@ DEFAULT_REMOTE=$(git remote | head -n 1)
 if [ "$REMOTE_COUNT" -le 1 ]; then
   REMOTE=$DEFAULT_REMOTE
 else
-  REMOTE=$(echo "$REMOTES" | sed "s/^${DEFAULT_REMOTE}\$/${DEFAULT_REMOTE} (current)/" \
+  REMOTE=$(echo "$REMOTES" | awk -v d="$DEFAULT_REMOTE" '$0 == d { $0 = $0 " (current)" } 1' \
     | fzf --prompt="Remote> " --height=~40% --layout=reverse --border \
           --header="Default: ${DEFAULT_REMOTE}" --query="$DEFAULT_REMOTE" --select-1 --exit-0)
   REMOTE=$(echo "$REMOTE" | sed 's/ (current)$//')
@@ -50,7 +50,7 @@ DEFAULT_BRANCH=$(git branch --show-current)
 if [ "$BRANCH_COUNT" -le 1 ]; then
   BRANCH=$DEFAULT_BRANCH
 else
-  BRANCH=$(echo "$BRANCHES" | sed "s/^${DEFAULT_BRANCH}\$/${DEFAULT_BRANCH} (current)/" \
+  BRANCH=$(echo "$BRANCHES" | awk -v d="$DEFAULT_BRANCH" '$0 == d { $0 = $0 " (current)" } 1' \
     | fzf --prompt="Branch> " --height=~40% --layout=reverse --border \
           --header="Default: ${DEFAULT_BRANCH}" --query="$DEFAULT_BRANCH") || true
   BRANCH=$(echo "$BRANCH" | sed 's/ (current)$//')
@@ -59,5 +59,5 @@ fi
 printf "Using branch: ${VIOLET}%s${CLEAR}\n" "$BRANCH"
 
 # push to remote
-git push $REMOTE $BRANCH
+git push "$REMOTE" HEAD:"$BRANCH"
 echo -e "${GREEN}Pushed succesfully to $REMOTE/$BRANCH.${CLEAR}"
