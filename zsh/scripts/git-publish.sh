@@ -14,8 +14,10 @@ COMMIT_MSG=$1
 # get the root path to current git project
 GIT_ROOT=$(git rev-parse --show-toplevel)
 
-# initial refresh and removing all cached files
-git -C "$GIT_ROOT" rm -r --cached --quiet . > /dev/null 2>&1 || true
+# untrack files that are tracked but now match .gitignore rules
+# (scoped, so submodule gitlinks and the rest of the index are left alone)
+git -C "$GIT_ROOT" ls-files -z --cached --ignored --exclude-standard \
+  | xargs -0 -r git -C "$GIT_ROOT" rm --cached --
 
 # add all changes to the next commit
 git add -A
