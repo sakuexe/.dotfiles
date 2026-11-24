@@ -15,9 +15,6 @@ source "$ZDOTDIR/hotkeys.zsh"
 # Load plugins
 source "$ZDOTDIR/plugins.zsh"
 
-# Fixes the issue where password-store's completion doesn't work
-autoload -Uz compinit && compinit
-
 # autostart tmux if installed
 if command -v tmux>/dev/null; then
   # check if shell is interactive and tmux is not already running
@@ -39,7 +36,8 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_dups
 setopt hist_save_no_dups
 
-# Load bash completion functions (to get compgen working)
+# Completion init (the only compinit, NixOS' global one is disabled in modules/shell.nix)
+# also fixes password-store's completion, bashcompinit gets compgen working
 autoload -Uz +X compinit && compinit
 autoload -Uz +X bashcompinit && bashcompinit
 
